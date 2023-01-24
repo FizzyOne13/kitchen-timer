@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeTime - functionalя cooking assistant</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    </style>
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="left-section">
+        <div class="logo">RecipeTime</div>
+      </div>
+      <div class="middle-section"></div>
+      <div class="right-section">
+        <img class="right-sec-icons-pal" src="icons/palette.png" />
+        <img class="right-sec-icons" src="icons/switches.png" />
+        <img class="right-sec-icons" src="icons/settings.png" />
+      </div>
+    </header>
+    <div class="main-part">
+      <img class="cross-button" src="icons/cross-green.png" />
+      <div class="central-container">
+        <div class="window-timer">
+          <div class="title">
+            <input class="title-bar" type="text" placeholder="Your title" />
+          </div>
+          <div class="timer">
+            <input class="timer-bar" type="text" placeholder="00:00" />
+          </div>
+          <div class="description">
+            <input
+              class="timer-description"
+              type="text"
+              placeholder="Here you can leave a short hint"
+            />
+          </div>
+        </div>
+        <div class="window-timer">
+          <div
+            contenteditable="true"
+            data-placeholder="Your title"
+            class="title-div"
+          ></div>
+          <div
+            contenteditable="true"
+            data-placeholder="00:00"
+            class="timer-div"
+          ></div>
+          <div
+            contenteditable="true"
+            data-placeholder="Here you can leave a short hint"
+            class="description-div"
+          ></div>
+        </div>
+        <div class="window-timer"></div>
+        <div class="create-new">
+          <img class="add-icon" src="icons/plus-icon.png" />
+        </div>
+      </div>
+
+      <div class="login-block">
+        <div class="login-container">
+          <button class="log-button">
+            <div class="tooltip">Log in</div>
+          </button>
+          <button class="reg-button">
+            <div class="tooltip">Register</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
