@@ -22,6 +22,7 @@ body {
   border-width: 2px;
   background-color: rgb(219, 219, 219);
   border-radius: 10px;
+  box-sizing: border-box;
 }
 .login-container {
   grid-template-rows: 50px 50px;
@@ -32,6 +33,7 @@ body {
   margin-top: 10px;
   border-radius: 6px;
   height: 24px;
+  transition: opacity 0.2s;
 }
 .reg-button {
   background-color: white;
@@ -39,11 +41,56 @@ body {
   border-radius: 6px;
   height: 24px;
   margin-top: 10px;
+  transition: opacity 0.2s;
 }
 .log-button:hover,
 .reg-button:hover {
   cursor: pointer;
 }
+.log-button:active,
+.reg-button:active {
+  opacity: 0.5;
+}
+
+.log-popup {
+  display: none;
+  position: fixed;
+  right: 15 px;
+  top: 70 px;
+  border: 2px dashed rgb(66, 66, 66);
+  z-index: 99;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+  color: black;
+}
+
+.reg-popup {
+  display: none;
+  position: fixed;
+  right: 15 px;
+  top: 70 px;
+  border: 2px dashed rgb(66, 66, 66);
+  z-index: 99;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+  color: black;
+}
+
+.form-container {
+  display: none;
+  position: fixed;
+  right: 15 px;
+  top: 70 px;
+  border: 2px dashed rgb(66, 66, 66);
+  z-index: 99;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+  color: black;
+}
+
 .tooltip {
   font-size: 14px;
   font-weight: 300;

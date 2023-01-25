@@ -7,9 +7,10 @@
     </style>
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
-    <script type="text/javascript" src="scripts/scripts.js"></script>
   </head>
   <body>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+
     <header class="header">
       <div class="left-section">
         <div class="logo">RecipeTime</div>
@@ -64,12 +65,63 @@
 
       <div class="login-block">
         <div class="login-container">
-          <button class="log-button">
-            <div class="tooltip">Log in</div>
-          </button>
-          <button class="reg-button">
-            <div class="tooltip">Register</div>
-          </button>
+          <button class="log-button" onclick="logForm()">Login</button>
+
+          <div class="log-popup" id="logForm">
+            <form action="/action_page.php" class="form-container">
+              <h2>Login</h2>
+
+              <label for="email"><b>Email</b></label>
+              <input
+                type="text"
+                placeholder="Enter email"
+                name="email"
+                required
+              />
+
+              <label for="psw"><b>Password </b></label>
+              <input
+                type="text"
+                placeholder="Enter password"
+                name="psw"
+                required
+              />
+
+              <button type="submit" class="btn">Login</button>
+              <button type="button" class="btn don't have" onclick="">
+                Don't have an account?
+              </button>
+            </form>
+          </div>
+
+          <button class="reg-button" onclick="regForm()">Register</button>
+          <form action="/action_page.php" class="form-container">
+            <h2>Login</h2>
+
+            <label for="email"><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Enter email"
+              name="email"
+              required
+            />
+
+            <label for="psw"><b>Password </b></label>
+            <input
+              type="text"
+              placeholder="Enter password"
+              name="psw"
+              required
+            />
+
+            <label for="psw"><b>Repeat the password </b></label>
+            <input type="text" name="psw" required />
+
+            <button type="submit" class="btn">Register</button>
+            <button type="button" class="already have" onclick="">
+              Already have an account?
+            </button>
+          </form>
         </div>
       </div>
     </div>
