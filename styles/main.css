@@ -8,6 +8,7 @@ body {
 .main-part {
   position: static;
 }
+
 .login-block {
   display: flex;
   justify-content: center;
@@ -24,31 +25,38 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
 }
+
 .login-container {
   grid-template-rows: 50px 50px;
   display: grid;
 }
+
 .log-button {
-  background-color: white;
+  background-color: rgb(189, 189, 189);
   margin-top: 10px;
   border-radius: 6px;
   height: 24px;
   transition: opacity 0.2s;
 }
+
 .reg-button {
-  background-color: white;
+  background-color: rgb(189, 189, 189);
   margin-top: 0;
   border-radius: 6px;
   height: 24px;
   margin-top: 10px;
   transition: opacity 0.2s;
 }
+
 .log-button:hover,
 .reg-button:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
+
 .log-button:active,
 .reg-button:active {
+  background-color: black;
   opacity: 0.5;
 }
 
@@ -60,7 +68,7 @@ body {
   border: 2px dashed rgb(66, 66, 66);
   z-index: 99;
   height: 100px;
-  width: 100px;
+  width: 200px;
   background-color: lightgray;
   color: black;
 }
@@ -73,7 +81,7 @@ body {
   border: 2px dashed rgb(66, 66, 66);
   z-index: 99;
   height: 100px;
-  width: 100px;
+  width: 200px;
   background-color: lightgray;
   color: black;
 }
@@ -86,9 +94,38 @@ body {
   border: 2px dashed rgb(66, 66, 66);
   z-index: 99;
   height: 100px;
-  width: 100px;
+  width: 200px;
   background-color: lightgray;
   color: black;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0px 22px 0px;
+  border: none;
+  background: white;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .button {
+  background-color: rgb(32, 146, 32);
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .button:hover {
+  opacity: 1;
 }
 
 .tooltip {

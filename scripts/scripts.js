@@ -3,11 +3,11 @@ function openLog() {
 }
 
 function openReg() {
-  document.getElementById("regForm").style.display = "none";
+  document.getElementById("regForm").style.display = "block";
 }
 
 function closeLog() {
-  document.getElementById("logForm").style.display = "block";
+  document.getElementById("logForm").style.display = "none";
 }
 
 function closeReg() {
