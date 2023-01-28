@@ -45,7 +45,7 @@ body {
   border-radius: 6px;
   height: 24px;
   margin-top: 10px;
-  transition: opacity 0.2s;
+  transition: opacity 0.3s;
 }
 
 .log-button:hover,
@@ -56,47 +56,63 @@ body {
 
 .log-button:active,
 .reg-button:active {
-  background-color: black;
+  background-color: slategray;
   opacity: 0.5;
 }
 
 .log-popup {
   display: none;
-  position: fixed;
-  right: 15 px;
-  top: 70 px;
-  border: 2px dashed rgb(66, 66, 66);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  border: 2px dashed rgb(117, 116, 116);
   z-index: 99;
-  height: 100px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   background-color: lightgray;
   color: black;
 }
 
 .reg-popup {
   display: none;
-  position: fixed;
-  right: 15 px;
-  top: 70 px;
-  border: 2px dashed rgb(66, 66, 66);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  border: 2px dashed rgb(117, 116, 116);
   z-index: 99;
-  height: 100px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   background-color: lightgray;
   color: black;
 }
 
 .form-container {
   display: none;
-  position: fixed;
-  right: 15 px;
-  top: 70 px;
-  border: 2px dashed rgb(66, 66, 66);
-  z-index: 99;
-  height: 100px;
-  width: 200px;
-  background-color: lightgray;
-  color: black;
+  padding: 10px;
+  max-width: 200px;
+  background-color: white;
+}
+
+.log-popup input[type="text"],
+.reg-popup input[type="text"],
+.log-popup input[type="password"],
+.reg-popup input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0px 22px 0px;
+  border: none;
+  background: white;
+}
+
+.log-popup input[type="text"]:focus,
+.reg-popup input[type="text"]:focus,
+.log-popup input[type="password"]:focus,
+.reg-popup input[type="password"]:focus {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0px 22px 0px;
+  border: none;
+  background: white;
 }
 
 .form-container input[type="text"],
@@ -135,15 +151,32 @@ body {
   color: rgb(6, 67, 6);
 }
 .cross-button {
-  height: 14px;
-  width: 14px;
   background-color: none;
-  position: relative;
-  top: -84px;
-  left: -22px;
-  float: right;
-  z-index: 101;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 98;
 }
+
+.show-button {
+  background-color: lightgray;
+  position: absolute;
+  top: 45px;
+  left: 50px;
+  z-index: 100;
+  color: black;
+  border: inherit;
+  border-radius: 4px;
+}
+
+.cross-button:hover {
+  box-shadow: 2px 2px 1px lightblue;
+}
+
+.cross-button:active {
+  box-shadow: 2px 2px 1px steelblue;
+}
+
 .central-container {
   margin-top: 100px;
   position: absolute;

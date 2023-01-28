@@ -22,7 +22,6 @@
       </div>
     </header>
     <div class="main-part">
-      <img class="cross-button" src="icons/cross-green.png" />
       <div class="central-container">
         <div class="window-timer">
           <div class="title">
@@ -62,19 +61,40 @@
         </div>
       </div>
 
-      <div class="login-block">
+      <div class="login-block" id="LRblock">
+        <input
+          type="image"
+          class="cross-button"
+          src="icons/cross-green.png"
+          name="green-cross-login"
+          width="14"
+          height="14"
+          alt="close"
+          onclick="closeLRblock()"
+          id="LRclose"
+        />
+
+        <input
+          type="button"
+          class="show-button"
+          alt="show sign form"
+          onclick="openLRblock()"
+          id="LRopen"
+          value="Show more"
+        />
+
         <div class="login-container">
           <button class="log-button" onclick="openLog()">Login</button>
-
           <div class="log-popup" id="logForm">
             <form action="action_page.php" method="post" class="form-container">
-              <h2>Login</h2>
+              <h1>Login</h1>
 
               <label for="email"><b>Email</b></label>
               <input
                 type="text"
                 placeholder="Enter email"
                 name="email"
+                size="14"
                 required
               />
 
@@ -83,6 +103,7 @@
                 type="text"
                 placeholder="Enter password"
                 name="psw"
+                size="14"
                 required
               />
 
@@ -94,16 +115,16 @@
           </div>
 
           <button class="reg-button" onclick="openReg()">Register</button>
-
           <div class="reg-popup" id="regForm"></div>
           <form action="action_page.php" method="post" class="form-container">
-            <h2>Login</h2>
+            <h1>Registration</h1>
 
             <label for="email"><b>Email</b></label>
             <input
               type="text"
               placeholder="Enter email"
               name="email"
+              size="14"
               required
             />
 
@@ -112,11 +133,18 @@
               type="text"
               placeholder="Enter password"
               name="psw"
+              size="14"
               required
             />
 
             <label for="psw"><b>Repeat the password </b></label>
-            <input type="text" name="psw" required />
+            <input
+              type="text"
+              placeholder="Repeat password"
+              name="psw"
+              size="14"
+              required
+            />
 
             <button type="submit" class="btn">Register</button>
             <button type="button" class="already have" onclick="">
