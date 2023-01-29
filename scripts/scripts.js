@@ -15,20 +15,15 @@ function closeReg() {
 }
 
 function closeLRblock() {
-  document.getElementById("LRblock").style.display = "none";
+  document.getElementById("LRblock").style.visibility = "hidden";
   showShow();
 }
 
 function showShow() {
-  document.getElementById("LRopen").style.display = "block";
+  document.getElementById("LRopen").style.visibility = "visible";
 }
 
 function openLRblock() {
-  document.getElementById("LRbblock").style.display = "block";
+  document.getElementById("LRblock").style.visibility = "visible";
+  document.getElementById("LRopen").style.visibility = "hidden";
 }
-
-const greenCross = document.getElementById("LRblock");
-
-greenCross.addEventListener("click", function handleClick(event) {
-  event.target.remove();
-});

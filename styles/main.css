@@ -36,7 +36,7 @@ body {
   margin-top: 10px;
   border-radius: 6px;
   height: 24px;
-  transition: opacity 0.2s;
+  width: 64px;
 }
 
 .reg-button {
@@ -44,8 +44,8 @@ body {
   margin-top: 0;
   border-radius: 6px;
   height: 24px;
+  width: 64px;
   margin-top: 10px;
-  transition: opacity 0.3s;
 }
 
 .log-button:hover,
@@ -91,6 +91,7 @@ body {
   padding: 10px;
   max-width: 200px;
   background-color: white;
+  z-index: 105;
 }
 
 .log-popup input[type="text"],
@@ -159,20 +160,27 @@ body {
 }
 
 .show-button {
-  background-color: lightgray;
+  background-color: rgb(189, 189, 189);
   position: absolute;
-  top: 45px;
-  left: 50px;
+  top: 115px;
+  right: 60px;
   z-index: 100;
   color: black;
-  border: inherit;
   border-radius: 4px;
+  visibility: hidden;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
+.show-button:hover,
 .cross-button:hover {
   box-shadow: 2px 2px 1px lightblue;
 }
 
+.show-button:active,
 .cross-button:active {
   box-shadow: 2px 2px 1px steelblue;
 }

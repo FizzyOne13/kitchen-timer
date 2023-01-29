@@ -61,6 +61,15 @@
         </div>
       </div>
 
+      <input
+        type="button"
+        class="show-button"
+        alt="show sign form"
+        onclick="openLRblock()"
+        id="LRopen"
+        value="Show more"
+      />
+
       <div class="login-block" id="LRblock">
         <input
           type="image"
@@ -74,36 +83,27 @@
           id="LRclose"
         />
 
-        <input
-          type="button"
-          class="show-button"
-          alt="show sign form"
-          onclick="openLRblock()"
-          id="LRopen"
-          value="Show more"
-        />
-
         <div class="login-container">
           <button class="log-button" onclick="openLog()">Login</button>
           <div class="log-popup" id="logForm">
-            <form action="action_page.php" method="post" class="form-container">
-              <h1>Login</h1>
+            <form action="action_page.php" class="form-container">
+              <h2>Login</h2>
 
               <label for="email"><b>Email</b></label>
               <input
                 type="text"
+                id="email"
                 placeholder="Enter email"
                 name="email"
-                size="14"
                 required
               />
 
               <label for="psw"><b>Password </b></label>
               <input
-                type="text"
+                type="password"
+                id="psw"
                 placeholder="Enter password"
                 name="psw"
-                size="14"
                 required
               />
 
@@ -116,8 +116,8 @@
 
           <button class="reg-button" onclick="openReg()">Register</button>
           <div class="reg-popup" id="regForm"></div>
-          <form action="action_page.php" method="post" class="form-container">
-            <h1>Registration</h1>
+          <form action="action_page.php" class="form-container">
+            <h2>Registration</h2>
 
             <label for="email"><b>Email</b></label>
             <input
@@ -130,7 +130,7 @@
 
             <label for="psw"><b>Password </b></label>
             <input
-              type="text"
+              type="password"
               placeholder="Enter password"
               name="psw"
               size="14"
@@ -139,7 +139,7 @@
 
             <label for="psw"><b>Repeat the password </b></label>
             <input
-              type="text"
+              type="password"
               placeholder="Repeat password"
               name="psw"
               size="14"
