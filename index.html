@@ -86,7 +86,7 @@
         <div class="login-container">
           <button class="log-button" onclick="openLog()">Login</button>
           <div class="log-popup" id="logForm">
-            <form action="action_page.php" class="form-container">
+            <form action="/action_page.php" class="form-container">
               <h2>Login</h2>
 
               <label for="email"><b>Email</b></label>
@@ -115,42 +115,43 @@
           </div>
 
           <button class="reg-button" onclick="openReg()">Register</button>
-          <div class="reg-popup" id="regForm"></div>
-          <form action="action_page.php" class="form-container">
-            <h2>Registration</h2>
+          <div class="reg-popup" id="regForm">
+            <form action="/action_page.php" class="form-container">
+              <h2>Registration</h2>
 
-            <label for="email"><b>Email</b></label>
-            <input
-              type="text"
-              placeholder="Enter email"
-              name="email"
-              size="14"
-              required
-            />
+              <label for="email"><b>Email</b></label>
+              <input
+                type="text"
+                placeholder="Enter email"
+                name="email"
+                size="14"
+                required
+              />
 
-            <label for="psw"><b>Password </b></label>
-            <input
-              type="password"
-              placeholder="Enter password"
-              name="psw"
-              size="14"
-              required
-            />
+              <label for="psw"><b>Password </b></label>
+              <input
+                type="password"
+                placeholder="Enter password"
+                name="psw"
+                size="14"
+                required
+              />
 
-            <label for="psw"><b>Repeat the password </b></label>
-            <input
-              type="password"
-              placeholder="Repeat password"
-              name="psw"
-              size="14"
-              required
-            />
+              <label for="psw"><b>Repeat the password </b></label>
+              <input
+                type="password"
+                placeholder="Repeat password"
+                name="psw"
+                size="14"
+                required
+              />
 
-            <button type="submit" class="btn">Register</button>
-            <button type="button" class="already have" onclick="">
-              Already have an account?
-            </button>
-          </form>
+              <button type="submit" class="btn">Register</button>
+              <button type="button" class="already have" onclick="">
+                Already have an account?
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
