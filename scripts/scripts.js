@@ -27,3 +27,11 @@ function openLRblock() {
   document.getElementById("LRblock").style.visibility = "visible";
   document.getElementById("LRopen").style.visibility = "hidden";
 }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  let modal = document.getElementById("logForm");
+  if (event.target == modal) {
+    closeLog();
+  }
+};

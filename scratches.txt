@@ -1,0 +1,40 @@
+
+.log-popup input[type="text"],
+.reg-popup input[type="text"],
+.log-popup input[type="password"],
+.reg-popup input[type="password"] {
+  width: 80%;
+  padding: 15px;
+  margin: 22px 0px 16px 0px;
+  border: none;
+  background: white;
+}
+
+
+\this part seems to be double, overwriting the equal .form-container stats
+
+
+.log-popup input[type="text"]:focus,
+.reg-popup input[type="text"]:focus,
+.log-popup input[type="password"]:focus,
+.reg-popup input[type="password"]:focus {
+  width: 80%;
+  padding: 15px;
+  margin: 18px 0px 12px 0px;
+  border: none;
+  background: white;
+}
+
+\this part is doubling as well, I think
+
+
+rgb(255, 225, 225) - a nice light red touch to white
+
+
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+
+  \it seems better practice to have at least cursor: pointer set once for all in document, should do later

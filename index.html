@@ -7,6 +7,7 @@
     </style>
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
     <script type="text/javascript" src="scripts/scripts.js"></script>
   </head>
   <body>
@@ -87,7 +88,7 @@
           <button class="log-button" onclick="openLog()">Login</button>
           <div class="log-popup" id="logForm">
             <form action="/action_page.php" class="form-container">
-              <h2>Login</h2>
+              <div class="div-for-h2">Login</div>
 
               <label for="email"><b>Email</b></label>
               <input
@@ -108,7 +109,7 @@
               />
 
               <button type="submit" class="btn">Login</button>
-              <button type="button" class="btn don't have" onclick="">
+              <button type="button" class="not" onclick="">
                 Don't have an account?
               </button>
             </form>
@@ -117,7 +118,7 @@
           <button class="reg-button" onclick="openReg()">Register</button>
           <div class="reg-popup" id="regForm">
             <form action="/action_page.php" class="form-container">
-              <h2>Registration</h2>
+              <div class="div-for-h2">Registration</div>
 
               <label for="email"><b>Email</b></label>
               <input
@@ -147,7 +148,7 @@
               />
 
               <button type="submit" class="btn">Register</button>
-              <button type="button" class="already have" onclick="">
+              <button type="button" class="already" onclick="">
                 Already have an account?
               </button>
             </form>

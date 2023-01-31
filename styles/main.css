@@ -63,6 +63,7 @@ body {
 .log-popup {
   display: none;
   position: absolute;
+  border-radius: 12px;
   right: -5px;
   top: -5px;
   border: 2px dashed rgb(117, 116, 116);
@@ -72,6 +73,7 @@ body {
 .reg-popup {
   display: none;
   position: absolute;
+  border-radius: 12px;
   right: -5px;
   top: -5px;
   border: 2px dashed rgb(117, 116, 116);
@@ -80,59 +82,66 @@ body {
 
 .form-container {
   padding: 10px;
+  min-width: 200px;
   max-width: 300px;
-  background-color: white;
+  background-color: lightgray;
+  border-radius: 12px;
+  text-align: left;
 }
 
-.log-popup input[type="text"],
-.reg-popup input[type="text"],
-.log-popup input[type="password"],
-.reg-popup input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0px 22px 0px;
-  border: none;
-  background: white;
-}
-
-.log-popup input[type="text"]:focus,
-.reg-popup input[type="text"]:focus,
-.log-popup input[type="password"]:focus,
-.reg-popup input[type="password"]:focus {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0px 22px 0px;
-  border: none;
-  background: white;
+.div-for-h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: normal;
+  text-align: center;
+  padding: 10px;
+  margin: 16px 0px 18px 0px;
 }
 
 .form-container input[type="text"],
 .form-container input[type="password"] {
-  width: 100%;
+  width: 80%;
   padding: 15px;
-  margin: 5px 0px 22px 0px;
+  margin: 16px 0px 18px 0px;
   border: none;
   background: white;
 }
 
+.form-container .btn,
+.form-container .btn-not-have,
+.form-container .btn-already-have {
+  margin-bottom: 16px;
+}
+
 .form-container input[type="text"]:focus,
 .form-container input[type="password"]:focus {
-  background-color: #ddd;
+  background-color: rgb(225, 255, 244);
   outline: none;
 }
 
-.form-container .button {
-  background-color: rgb(32, 146, 32);
-  color: white;
+.form-container .btn,
+.form-container .not,
+.form-container .already {
+  background-color: rgb(225, 255, 244);
+  color: black;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 95%;
   margin-bottom: 10px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-.form-container .button:hover {
+.form-container .btn:hover,
+.form-container .not:hover,
+.form-container .already:hover {
   opacity: 1;
+}
+
+.form-container .btn:active,
+.form-container .not:active,
+.form-container .already:active {
+  opacity: 0.8;
 }
 
 .tooltip {
@@ -152,7 +161,7 @@ body {
 .show-button {
   background-color: rgb(189, 189, 189);
   position: absolute;
-  top: 115px;
+  top: 90px;
   right: 60px;
   z-index: 100;
   color: black;
