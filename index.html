@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
-    <script type="text/javascript" src="scripts/scripts.js"></script>
   </head>
   <body>
     <header class="header">
@@ -17,9 +16,27 @@
       </div>
       <div class="middle-section"></div>
       <div class="right-section">
-        <img class="right-sec-icons-pal" src="icons/palette.png" />
-        <img class="right-sec-icons" src="icons/switches.png" />
-        <img class="right-sec-icons" src="icons/settings.png" />
+        <input
+          type="image"
+          class="right-sec-icons-pal"
+          src="icons/palette.png"
+          name="color-changer"
+          alt="click to select color scheme"
+        />
+        <input
+          type="image"
+          class="right-sec-icons"
+          src="icons/switches.png"
+          name="scheme-changer"
+          alt="click to enable pattern on background"
+        />
+        <input
+          type="image"
+          class="right-sec-icons"
+          src="icons/settings.png"
+          name="settings"
+          alt="click to open website settings"
+        />
       </div>
     </header>
     <div class="main-part">
@@ -58,7 +75,15 @@
         </div>
         <div class="window-timer"></div>
         <div class="create-new">
-          <img class="add-icon" src="icons/plus-icon.png" />
+          <input
+            type="image"
+            class="add-button"
+            src="icons/plus-icon.png"
+            name="desc-adder"
+            width="70"
+            height="70"
+            alt="add description"
+          />
         </div>
       </div>
 
@@ -109,9 +134,19 @@
               />
 
               <button type="submit" class="btn">Login</button>
-              <button type="button" class="not" onclick="">
-                Don't have an account?
-              </button>
+              <button type="button" class="not">Don't have an account?</button>
+
+              <input
+                type="image"
+                class="cross-button"
+                src="icons/cross-green.png"
+                name="green-cross-login"
+                width="14"
+                height="14"
+                alt="close"
+                onclick="closeLblock()"
+                id="Lclose"
+              />
             </form>
           </div>
 
@@ -148,13 +183,27 @@
               />
 
               <button type="submit" class="btn">Register</button>
-              <button type="button" class="already" onclick="">
+              <button type="button" class="already">
                 Already have an account?
               </button>
+
+              <input
+                type="image"
+                class="cross-button"
+                src="icons/cross-green.png"
+                name="green-cross-login"
+                width="14"
+                height="14"
+                alt="close"
+                onclick="closeRblock()"
+                id="Lclose"
+              />
             </form>
           </div>
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="scripts/scripts.js"></script>
   </body>
 </html>

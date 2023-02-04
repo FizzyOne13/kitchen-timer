@@ -38,3 +38,28 @@ button {
   font-weight: 600;
 
   \it seems better practice to have at least cursor: pointer set once for all in document, should do later
+
+
+
+
+  \keep part below for a time 
+
+  // When the user clicks anywhere outside of the div, close it
+let LogReg = document.getElementById("LRblock");
+LogReg.onload = function () {
+  document.addEventListener("click", function (div) {
+    let hidelog = document.getElementById("logForm");
+    if (div.target !== hidelog && div.target.parentNode != hidelog) {
+      hidelog.style.display = "none";
+    }
+  });
+};
+
+
+let catcher = document.body;
+catcher.addEventListener("click", function (div) {
+  let hidelog = document.getElementById("logForm");
+  if (div.target !== hidelog && hidelog.style.display == "block") {
+    hidelog.style.display = "none";
+  }
+});

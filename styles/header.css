@@ -7,15 +7,17 @@
   flex-direction: row;
   z-index: 100;
   resize: horizontal;
-  overflow: auto;
+  position: sticky;
+  top: 0;
 }
 .left-section {
   display: flex;
   align-items: center;
   min-width: 200px;
+  box-shadow: 1px 0px rgb(7, 94, 114);
 }
 .logo {
-  color: darkgreen;
+  color: rgb(7, 94, 114);
   font-family: "Lato", sans-serif;
   font-size: 32px;
   font-weight: 900;
@@ -30,9 +32,9 @@
   resize: none;
   overflow-x: auto;
   min-width: 100px;
-  position: revert;
   position: relative;
   flex: 2;
+  box-shadow: 1px 0px rgb(7, 94, 114);
 }
 .right-section {
   display: flex;

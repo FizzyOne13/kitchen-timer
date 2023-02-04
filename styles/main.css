@@ -68,6 +68,7 @@ body {
   top: -5px;
   border: 2px dashed rgb(117, 116, 116);
   z-index: 99;
+  max-width: 220px;
 }
 
 .reg-popup {
@@ -78,6 +79,7 @@ body {
   top: -5px;
   border: 2px dashed rgb(117, 116, 116);
   z-index: 99;
+  max-width: 220px;
 }
 
 .form-container {
@@ -156,6 +158,12 @@ body {
   top: 8px;
   right: 10px;
   z-index: 98;
+}
+
+.add-button {
+  background-color: none;
+  text-align: center;
+  padding-top: 65px;
 }
 
 .show-button {

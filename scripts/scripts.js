@@ -19,6 +19,16 @@ function closeLRblock() {
   showShow();
 }
 
+function closeLblock() {
+  document.getElementById("LRblock").style.visibility = "visible";
+  closeLog();
+}
+
+function closeRblock() {
+  document.getElementById("LRblock").style.visibility = "visible";
+  closeReg();
+}
+
 function showShow() {
   document.getElementById("LRopen").style.visibility = "visible";
 }
@@ -28,10 +38,14 @@ function openLRblock() {
   document.getElementById("LRopen").style.visibility = "hidden";
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  let modal = document.getElementById("logForm");
-  if (event.target == modal) {
-    closeLog();
-  }
-};
+let not = document.getElementsByClassName("not");
+not[0].addEventListener("click", function goToReg() {
+  closeLog();
+  openReg();
+});
+
+let already = document.getElementsByClassName("already");
+already[0].addEventListener("click", function goToLog() {
+  closeReg();
+  openLog();
+});
