@@ -1,10 +1,11 @@
 body {
   font-family: "Lato", sans-serif;
-  background-color: rgb(99, 208, 212);
+  background-color: rgb(216, 124, 91);
   margin: 0;
   padding: 0;
   height: 3000px;
 }
+
 .main-part {
   position: static;
 }
@@ -203,8 +204,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 .window-timer {
   background-color: rgb(219, 219, 219);

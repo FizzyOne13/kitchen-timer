@@ -63,3 +63,121 @@ catcher.addEventListener("click", function (div) {
     hidelog.style.display = "none";
   }
 });
+
+
+  background-color: rgb(117, 116, 116);
+
+
+COLOR-CODES FOR THEMES
+
+blue
+logo + bold objects - rgb(7, 94, 114)
+2nd lighter - rgb(97, 245, 225)
+background - rgb(99, 208, 212)
+
+green
+logo + bold objects - rgb(7, 114, 59) 
+2nd lighter - rgb(122, 206, 242)
+background - rgb(99, 148, 212)
+
+yellow
+logo + bold objects - rgb(154, 154, 2) 
+2nd lighter - rgb(239, 232, 132)
+background - rgb(204, 216, 91)
+
+red
+logo + bold objects - rgb(154, 27, 2) 
+2nd lighter - rgb(239, 166, 141)
+background - rgb(216, 124, 91)
+
+header settings popups background color
+rgb(217, 238, 255)
+
+
+?Який функціонал я ще хочу та маю відобразити в налаштуваннях?
+
+Підтягнути муз мелодію та налаштування на неї, бажано, щоб кожне віконце мало власне, якщо ігнорується перша мелодія,
+то друга її перебиває та лишається лише "мігання", наприклад.
+Показувати сповіщення у вигляді модальних вікон у браузері?
+
+налаштування тільки для зареєстрованних користувачів або якщо є кукі - подумати, як це взагалі робиться, чи робити і скільки
+там бекенду. взагалі, в дальніх планах зробити бекенд на це все.
+
+
+calc(var(
+
+
+
+  var footerPlace = document.querySelector("body").style.height;
+var footerHeight = document.getElementById("foot").style.minHeight;
+document.getElementById("foot").style.marginTop =
+  "calc(footerPlace - footerHeight)";
+
+  A race condition, make sure that whatever object is being accessed through the .style property access is encased in a leading if statement - like
+
+if(document.getElementByClassname(“myClassName”).length > 0){     
+    document.getElementByClassname(“myClassName”)[0].style = "yourCss = somepx;" 
+} 
+
+
+поставити, мабуть, плавне перемикання світла - як опцію у налаштуваннях
+
+
+const button = document.getElementById('btn');
+
+let elementClicked = false;
+
+button.addEventListener('click', function handleClick() {
+  console.log('element clicked');
+
+  if (elementClicked) {
+    console.log('button has already been clicked before');
+  }
+
+  elementClicked = true;
+});
+
+Example 2: Restrict the Button Click After a Single Click
+To restrict the submit button click, write the below-provided code in the JavaScript file or the <script> tag:
+
+var submitButton = document.getElementById('submit');
+let buttonClicked = false;
+submitButton.addEventListener('click', function handleClick() {
+ if (buttonClicked) {
+  return;
+ }
+ console.log('Submit button is clicked');
+ buttonClicked = true;
+});
+
+
+подивитись якось, як робити read-time|progress-bar
+
+
+About
+Privacy policy
+Terms of use
+Contact
+
+
+My other projects
+© 2023 RecipeTime.com
+
+media
+
+consider using of <nav> for footer link group?
+For URL, use link element
+Use address element only for contact information
+Avoid div element as much as possible
+
+what's this? - Use download attribute for downloading a resource
+It will force browsers to download linked resource to the storage.
+
+
+for footer links:
+.footer a:visited {
+  color: silver;
+}
+add later
+
+main > tooltip - empty class?

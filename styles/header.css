@@ -1,7 +1,7 @@
 .header {
   margin: 0px;
   padding-top: 0;
-  background-color: rgb(97, 245, 225);
+  background-color: rgb(239, 166, 141);
   min-height: 60px;
   display: flex;
   flex-direction: row;
@@ -17,7 +17,7 @@
   box-shadow: 1px 0px rgb(7, 94, 114);
 }
 .logo {
-  color: rgb(7, 94, 114);
+  color: rgb(154, 27, 2);
   font-family: "Lato", sans-serif;
   font-size: 32px;
   font-weight: 900;
@@ -49,7 +49,165 @@
   width: 48px;
   height: 48px;
 }
-.right-sec-icons-pal {
-  width: 60px;
-  height: 60px;
+
+.palette-popup,
+.switches-popup,
+.settings-popup {
+  border: 1px groove silver;
+  z-index: 101;
+  display: none;
+  position: fixed;
+  top: 30px;
+  right: 60px;
+  max-width: 220px;
+}
+
+.palette-popup {
+  margin-top: 30px;
+  margin-right: 24px;
+}
+
+.switches-popup {
+  margin-top: 30px;
+  margin-right: -20px;
+}
+
+.settings-popup {
+  margin-top: 30px;
+  margin-right: -34px;
+}
+
+.header-form-container .btn {
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  color: black;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin-top: 5px;
+}
+
+.color-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-buttons-container:after,
+.scheme-switch-container:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 45%;
+  border-top: 1px groove silver;
+  border-right: 0px groove silver;
+  border-bottom: 0px groove silver;
+  border-left: 1px groove silver;
+  margin-left: 0px;
+  transform: rotate(45deg);
+  margin-bottom: -5px;
+  background-color: rgb(211, 211, 211);
+  width: 10px;
+  height: 10px;
+}
+
+.settings-container::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 85%;
+  border-top: 1px groove silver;
+  border-right: 0px groove silver;
+  border-bottom: 0px groove silver;
+  border-left: 1px groove silver;
+  margin-left: 0px;
+  transform: rotate(45deg);
+  margin-bottom: -5px;
+  background-color: rgb(211, 211, 211);
+  width: 10px;
+  height: 10px;
+}
+
+.header-form-container {
+  background-color: rgb(211, 211, 211);
+  padding: 0px;
+  min-width: 150px;
+  min-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.scheme-switch-container {
+  background-color: rgb(211, 211, 211);
+  padding: 0px;
+  min-width: 150px;
+  max-width: 180px;
+  min-height: 40px;
+  max-height: 120px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  bottom: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(83, 83, 83);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 15px;
+}
+
+.slider-round:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  top: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider-round {
+  background-color: rgb(24, 102, 150);
+}
+
+input:focus + .slider-round {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + .slider-round:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.right-sec-icons:hover {
+  box-shadow: 2px 2px 4px rgb(87, 83, 83);
+}
+
+.right-sec-icons:active {
+  box-shadow: 2px 2px 1px rgb(87, 83, 83);
 }

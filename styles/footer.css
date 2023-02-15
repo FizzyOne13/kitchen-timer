@@ -1,8 +1,56 @@
+:root {
+  --footerPlacing: 2000px;
+}
+
 .footer {
-  margin: 0px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   z-index: 100;
-  resize: horizontal;
   overflow: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  background-color: rgb(154, 27, 2);
+  color: white;
+  position: sticky;
+  margin-top: 3000px;
+  box-sizing: border-box;
+  padding: 30px 15%;
+}
+
+.general-container {
+  width: auto;
+  resize: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: rgb(211, 211, 211);
+}
+
+.footer a:active {
+  opacity: 0.8;
+}
+
+.col-1,
+.col-2 {
+  text-align: center;
+  flex-grow: 2;
+}
+
+.col-1 a,
+.col-2 a {
+  margin-bottom: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.copyright-holder {
+  font-weight: 700;
 }

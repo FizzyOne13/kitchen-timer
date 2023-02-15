@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
-    <title>RecipeTime - functionalя cooking assistant</title>
+    <meta charset="UTF-8" />
+    <title>RecipeTime - functional cooking assistant</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
     </style>
@@ -9,34 +10,105 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
   </head>
-  <body>
-    <header class="header">
+  <style>
+    :root {
+      --footerSize: 200px;
+      --pageHeight: 3000px;
+    }
+  </style>
+  <body id="body">
+    <header class="header" id="head">
       <div class="left-section">
-        <div class="logo">RecipeTime</div>
+        <div class="logo" id="logotype">RecipeTime</div>
       </div>
       <div class="middle-section"></div>
       <div class="right-section">
         <input
           type="image"
-          class="right-sec-icons-pal"
+          class="right-sec-icons"
           src="icons/palette.png"
           name="color-changer"
           alt="click to select color scheme"
+          id="palette-call"
+          onclick="openPalette()"
         />
+        <div class="palette-popup" id="paletteForm">
+          <div class="header-form-container">
+            <div class="color-buttons-container">
+              <button
+                type="color-choise"
+                class="btn"
+                id="blue"
+                onclick="switchToBlue()"
+                style="background-color: rgb(24, 102, 150)"
+              ></button>
+              <button
+                type="color-choise"
+                class="btn"
+                id="green"
+                onclick="switchToGreen()"
+                style="background-color: rgb(7, 114, 59)"
+              ></button>
+              <button
+                type="color-choise"
+                class="btn"
+                id="yellow"
+                onclick="switchToYellow()"
+                style="background-color: rgb(154, 154, 2)"
+              ></button>
+              <button
+                type="color-choise"
+                class="btn"
+                id="red"
+                onclick="switchToRed()"
+                style="background-color: rgb(154, 27, 2)"
+              ></button>
+            </div>
+          </div>
+        </div>
+
         <input
           type="image"
           class="right-sec-icons"
           src="icons/switches.png"
           name="scheme-changer"
           alt="click to enable pattern on background"
+          id="scheme-call"
+          onclick="openScheme()"
         />
+
+        <div class="switches-popup" id="schemeForm">
+          <div class="header-form-container">
+            <div class="scheme-switch-container">
+              <label>Pattern background</label><br /><br />
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider-round"></span> </label
+              ><br />
+              <label>Transparent background</label><br /><br />
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider-round"></span> </label
+              ><br />
+            </div>
+          </div>
+        </div>
+
         <input
           type="image"
           class="right-sec-icons"
           src="icons/settings.png"
           name="settings"
           alt="click to open website settings"
+          id="settings-call"
+          onclick="openSettings()"
         />
+
+        <div class="settings-popup" id="settingsForm">
+          <div class="header-form-container">
+            <div class="settings-container"></div>
+          </div>
+        </div>
       </div>
     </header>
     <div class="main-part">
@@ -82,7 +154,7 @@
             name="desc-adder"
             width="70"
             height="70"
-            alt="add description"
+            alt="add another timer window"
           />
         </div>
       </div>
@@ -124,7 +196,7 @@
                 required
               />
 
-              <label for="psw"><b>Password </b></label>
+              <label for="psw"><b>Password</b></label>
               <input
                 type="password"
                 id="psw"
@@ -203,7 +275,21 @@
         </div>
       </div>
     </div>
-
+    <footer class="footer" id="foot">
+      <div class="general-container">
+        <div class="col-1">
+          <a href="#">About</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of use</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="col-2">
+          <a href="#">My other projects</a>
+          <br />
+          <div class="copyright-holder">© 2023 RecipeTime.com</div>
+        </div>
+      </div>
+    </footer>
     <script type="text/javascript" src="scripts/scripts.js"></script>
   </body>
 </html>
