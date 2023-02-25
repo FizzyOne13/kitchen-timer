@@ -39,32 +39,6 @@ button {
 
   \it seems better practice to have at least cursor: pointer set once for all in document, should do later
 
-
-
-
-  \keep part below for a time 
-
-  // When the user clicks anywhere outside of the div, close it
-let LogReg = document.getElementById("LRblock");
-LogReg.onload = function () {
-  document.addEventListener("click", function (div) {
-    let hidelog = document.getElementById("logForm");
-    if (div.target !== hidelog && div.target.parentNode != hidelog) {
-      hidelog.style.display = "none";
-    }
-  });
-};
-
-
-let catcher = document.body;
-catcher.addEventListener("click", function (div) {
-  let hidelog = document.getElementById("logForm");
-  if (div.target !== hidelog && hidelog.style.display == "block") {
-    hidelog.style.display = "none";
-  }
-});
-
-
   background-color: rgb(117, 116, 116);
 
 
@@ -106,8 +80,6 @@ rgb(217, 238, 255)
 
 calc(var(
 
-
-
   var footerPlace = document.querySelector("body").style.height;
 var footerHeight = document.getElementById("foot").style.minHeight;
 document.getElementById("foot").style.marginTop =
@@ -121,7 +93,6 @@ if(document.getElementByClassname(“myClassName”).length > 0){
 
 
 поставити, мабуть, плавне перемикання світла - як опцію у налаштуваннях
-
 
 const button = document.getElementById('btn');
 
@@ -181,3 +152,250 @@ for footer links:
 add later
 
 main > tooltip - empty class?
+
+grid-template-rows: 1fr 1fr;
+
+
+working fucntion code {
+   const timerDiv = document.createElement("div");
+  centrGrid.append(timerDiv);
+}
+
+
+this worked even better, but not in a row
+const centrGrid = document.querySelector(".central-container");
+const getTimer = document.querySelector(".window-timer");
+function addTimer() {
+  const timerDiv = getTimer.cloneNode(true);
+  centrGrid.append(timerDiv);
+}
+
+
+було два типи таймерів і другий мені сдається менш перспективним, хоча і написан через атрибути attr(), які мені цікаві зараз
+копіюю внутрощи контейнера-таймера в html файлі
+ <div
+            contenteditable="true"
+            data-placeholder="Your title"
+            class="title-div"
+          ></div>
+          <div
+            contenteditable="true"
+            data-placeholder="00:00"
+            class="timer-div"
+          ></div>
+          <div
+            contenteditable="true"
+            data-placeholder="Here you can leave a short hint"
+            class="description-div"
+          ></div>
+та налаштування стилів css для них. перезапишу першим типом
+
+.title-div,
+.timer-div,
+.description-div {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: black;
+  padding-left: 10px;
+  text-align: left;
+  align-items: center;
+  height: 90%;
+  width: 80%;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  box-sizing: border-box;
+}
+.title-div:empty:before,
+.timer-div:empty:before,
+.description-div:empty:before {
+  content: attr(data-placeholder);
+  color: rgb(90, 90, 90);
+  border-color: black;
+}
+.title-div {
+  height: 25.6px;
+}
+.timer-div {
+  height: 40px;
+}
+.description-div {
+  height: 70px;
+}
+
+
+centrGrid.append(timerDiv); - that if i need to put node as last one in greed
+
+
+ const title = document.centrGrid.children[n - 1].querySelector(".title-bar");
+  title.setAttribute("placeholder", "Your title");
+
+
+   const title = getTimer[0].querySelector(".title-bar");
+  document.title.innerText = "FFF";
+
+    document.getElementById;
+  const title = getTimer[0].querySelector(".title-bar");
+  document.title.innerText = "FFF";
+
+  <div class="demo">Hello</div>
+// Adding a CSS class name to an element
+const element = document.querySelector('.demo');
+element.classList.add('new-class');
+.new-class{
+    background: red;
+}
+
+// Removing an existing class from an element
+const element = document.querySelector('.demo');
+element.classList.removeClass('.new-class');
+// Toggling a class from an element
+const element = document.querySelector('.demo');
+element.classList.toggleClass('.new-class');
+
+more examples
+
+function changeElement(id) {
+  var el = document.getElementById(id);
+  el.style.color = "red";
+  el.style.fontSize = "15px";
+  el.style.backgroundColor = "#FFFFFF";
+}
+
+function getStyleSheet(unique_title) {
+  for(var i=0; i<document.styleSheets.length; i++) {
+    var sheet = document.styleSheets[i];
+    if(sheet.title == unique_title) {
+      return sheet;
+    }
+  }
+}
+
+var sheet = document.createElement('style')
+sheet.innerHTML = "div {border: 2px solid black; background-color: blue;}";
+document.body.appendChild(sheet);
+
+var sheetToBeRemoved = document.getElementById('styleSheetId');
+var sheetParent = sheetToBeRemoved.parentNode;
+sheetParent.removeChild(sheetToBeRemoved);
+
+this one helped me to finally clear the placeholder:
+<p>Clear the input field when you click on the button:</p>
+<button onclick="document.getElementById('myInput').value = ''">Clear input field</button>
+
+<input type="text" value="Blabla" id="myInput">
+
+mb this as well
+
+const input = document.getElementById('input');
+
+if (input) {
+   // it will remove placeholder value on focus and store with dataset variable
+  input.addEventListener('focus', (e) => {
+    input.dataset.placeholder = input.placeholder
+    input.placeholder = '';
+  });
+    
+  // it will reset placeholder value on blur by dataset variable
+  input.addEventListener('blur', (e) => {
+    input.placeholder = input.dataset.placeholder;
+  });
+}else{
+  console.log("input is not defined",input);
+}
+<div class="mainInput">
+  <input type="text" class="input" id="input" placeholder="Enter your todo : ">
+  <button class="btn" id="btn">Submit</button>
+</div>
+<span> Todo list : </span>
+
+
+
+let colorDef = document.getElementById("palette-call");
+colorDef.addEventListener("click", function defColorCheck() {
+  if (document.getElementById(blue).style.backgroundColor != "blue") {
+    document.getElementById(blue).style.backgroundColor == "blue";
+  }
+});
+
+const currentColour = document.getElementById("body").style.backgroundColor;
+
+
+const currentColour = body.getAttribute("background-color");
+
+
+
+
+const tr = document.getElementById("transp");
+const body = document.getElementById("body");
+const currentColour = document.getElementById("body").style.backgroundColor;
+function transpOn() {
+  if (tr.checked && currentColour == "rgb(99, 148, 212)") {
+    //blue
+    body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
+    alert("it works!");
+  } else if (tr.checked && currentColour == "rgb(99, 208, 212)") {
+    //green
+    body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
+    alert("it works!");
+  } else if (tr.checked && currentColour == "rgb(204, 216, 91)") {
+    //yellow
+    body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
+    alert("it works!");
+  } else if (tr.checked && currentColour == "rgb(216, 124, 91)") {
+    //red
+    body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
+    alert("it works!");
+  } else {
+    document.body.style.backgroundColor = "rgb(216, 124, 91)";
+  }
+}
+
+
+height: 3000px;  body
+
+//var footerPlace = document.getPropertyValue("--footerPlacing");
+//var footerHeight = document.getElementById("foot").style.minHeight;
+//document.getElementById("foot").style.marginTop =
+//"calc(footerPlace - footerHeight)";
+
+
+ margin-top: 3000px; footer
+
+
+ <style>
+    :root {
+      --footerSize: 200px;
+      --pageHeight: 3000px;
+    }
+  </style>    index.html
+
+
+   --pageHeight: calc(
+    currentCentrHight + (--centralContrTopMarg) + minHeader + (--minBotMarg)
+  );
+
+  var minHeader = header.offsetHeight;
+
+   margin-top: calc((--minHightHeader)+);
+
+   + --centralContrTopMarg + --minBotMarg
+
+
+fallback
+   :root {
+  --light-gray: #ccc;
+}
+
+p {
+  color: var(--light-grey, #f0f0f0, #f9f9f9) /* No --light-grey, so #f0f0f0 is 
+  used as a fallback value */
+}

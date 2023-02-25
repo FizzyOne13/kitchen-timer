@@ -9,6 +9,7 @@
   resize: horizontal;
   position: sticky;
   top: 0;
+  opacity: unset;
 }
 .left-section {
   display: flex;
@@ -63,17 +64,17 @@
 }
 
 .palette-popup {
-  margin-top: 30px;
+  margin-top: 28px;
   margin-right: 24px;
 }
 
 .switches-popup {
-  margin-top: 30px;
+  margin-top: 28px;
   margin-right: -20px;
 }
 
 .settings-popup {
-  margin-top: 30px;
+  margin-top: 28px;
   margin-right: -34px;
 }
 

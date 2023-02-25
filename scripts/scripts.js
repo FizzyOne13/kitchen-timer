@@ -1,3 +1,4 @@
+//opening and closing log|reg from, closing whole form to button, opening it up again
 function openLog() {
   document.getElementById("logForm").style.display = "block";
 }
@@ -38,6 +39,7 @@ function openLRblock() {
   document.getElementById("LRopen").style.visibility = "hidden";
 }
 
+//switching between log and reg
 let not = document.getElementsByClassName("not");
 not[0].addEventListener("click", function goToReg() {
   closeLog();
@@ -50,6 +52,7 @@ already[0].addEventListener("click", function goToLog() {
   openLog();
 });
 
+//three header icons opening and closing
 function openPalette() {
   document.getElementById("paletteForm").style.display = "block";
 }
@@ -73,22 +76,71 @@ function closeScheme() {
 function closeSettings() {
   document.getElementById("settingsForm").style.display = "none";
 }
+//page sizing and footer placement depending on quantaty of timers and device
+const body = document.getElementById("body");
+const header = document.getElementById("head");
+const foot = document.getElementById("foot");
+const root = document.documentElement;
+window.onload = function getCentrHeight() {
+  const centrCont = document.querySelector(".central-container");
+  const currentCentrHight = centrCont.offsetHeight;
+  console.log(currentCentrHight);
+  body.style.setProperty(
+    "height",
+    "calc(currentCentrHight + (--centralContrTopMarg)  + (--minBotMarg))"
+  );
+  root.style.setProperty("--footerTopMarg", currentCentrHight + 450 + "px");
+  foot.style.marginTop =
+    "calc(currentCentrHight + (--centralContrTopMarg) + (--minBotMarg))";
+};
 
-let colorDef = document.getElementById("palette-call");
-colorDef.addEventListener("click", function defColorCheck() {
-  if (document.getElementById(blue).style.backgroundColor != "blue") {
-    document.getElementById(blue).style.backgroundColor == "blue";
-  }
-});
+//color schemes switching
 
-var footerPlace = document.getPropertyValue("--footerPlacing");
-var footerHeight = document.getElementById("foot").style.minHeight;
-document.getElementById("foot").style.marginTop =
-  "calc(footerPlace - footerHeight)";
+const colortheme = {
+  blue: {
+    "--bold-color": "rgb(7, 94, 114)",
+    "--lighter-color": "rgb(97, 245, 225)",
+    "--background-color": "rgb(99, 208, 212)",
+  },
+  green: {
+    "--bold-color": "rgb(7, 114, 59)",
+    "--lighter-color": "rgb(122, 206, 242)",
+    "--background-color": "rgb(99, 148, 212)",
+  },
+  yellow: {
+    "--bold-color": "rgb(154, 154, 2)",
+    "--lighter-color": "rgb(239, 232, 132)",
+    "--background-color": "rgb(204, 216, 91)",
+  },
+  red: {
+    "--bold-color": "rgb(154, 27, 2)",
+    "--lighter-color": "rgb(239, 166, 141)",
+    "--background-color": "rgb(216, 124, 91)",
+  },
+};
 
-var widthFooter = document.getPropertyValue();
-var spaceBetween = (document.querySelector(".col-1").style.marginRight =
-  "calc(");
+const transptheme = {
+  trblue: {
+    "--bold-color": "rgb(7, 94, 114)",
+    "--lighter-color": "rgb(97, 245, 225)",
+    "--background-color": "rgba(99, 208, 212, 0.2)",
+  },
+  trgreen: {
+    "--bold-color": "rgb(7, 114, 59)",
+    "--lighter-color": "rgb(122, 206, 242)",
+    "--background-color": "rgba(99, 148, 212, 0.2)",
+  },
+  tryellow: {
+    "--bold-color": "rgb(154, 154, 2)",
+    "--lighter-color": "rgb(239, 232, 132)",
+    "--background-color": "rgba(204, 216, 91, 0.2)",
+  },
+  trred: {
+    "--bold-color": "rgb(154, 27, 2)",
+    "--lighter-color": "rgb(239, 166, 141)",
+    "--background-color": "rgba(216, 124, 91, 0.2)",
+  },
+};
 
 function switchToBlue() {
   document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
@@ -116,4 +168,52 @@ function switchToRed() {
   document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
   document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
   document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
+}
+
+//timer adding and checking if placeholders are set to default because of using NodeCopy
+const centrGrid = document.querySelector(".central-container");
+const getTimer = document.querySelector(".window-timer");
+function addTimer() {
+  const timerDiv = getTimer.cloneNode(true);
+  var n = centrGrid.childElementCount;
+  timerDiv.id = "timer" + n;
+  centrGrid.insertBefore(timerDiv, centrGrid.children[n - 1]);
+  var lastTimer = document.getElementById("timer" + n);
+  lastTimer.querySelector(".title-bar").value = "";
+  lastTimer
+    .querySelector(".title-bar")
+    .setAttribute("placeholder", "Your title");
+  lastTimer.querySelector(".timer-bar").value = "";
+  lastTimer.querySelector(".timer-description").value = "";
+  lastTimer
+    .querySelector(".timer-description")
+    .setAttribute("placeholder", "Here you can leave a short hint");
+}
+
+const tr = document.getElementById("transp");
+
+function transpOn() {
+  if (tr.checked) {
+    var currentColour = document.getElementById("body").style.backgroundColor;
+    if (currentColour == "rgb(99, 148, 212)") {
+      //blue
+      body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(99, 208, 212)") {
+      //green
+      body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(204, 216, 91)") {
+      //yellow
+      body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(216, 124, 91)") {
+      //red
+      body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
+      alert("it works!");
+    }
+  } else {
+    document.body.style.backgroundColor = "rgb(216, 124, 91)";
+    alert("it's cursed!");
+  }
 }

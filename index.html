@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
   </head>
-  <style>
-    :root {
-      --footerSize: 200px;
-      --pageHeight: 3000px;
-    }
-  </style>
+  <style></style>
   <body id="body">
     <header class="header" id="head">
       <div class="left-section">
@@ -34,7 +29,7 @@
         />
         <div class="palette-popup" id="paletteForm">
           <div class="header-form-container">
-            <div class="color-buttons-container">
+            <div class="color-buttons-container" onmouseleave="closePalette()">
               <button
                 type="color-choise"
                 class="btn"
@@ -79,16 +74,16 @@
 
         <div class="switches-popup" id="schemeForm">
           <div class="header-form-container">
-            <div class="scheme-switch-container">
+            <div class="scheme-switch-container" onmouseleave="closeScheme()">
               <label>Pattern background</label><br /><br />
               <label class="switch">
-                <input type="checkbox" />
+                <input type="checkbox" id="patt" />
                 <span class="slider-round"></span> </label
               ><br />
               <label>Transparent background</label><br /><br />
               <label class="switch">
-                <input type="checkbox" />
-                <span class="slider-round"></span> </label
+                <input type="checkbox" id="transp" onclick="transpOn()" />
+                <span class="slider-round" id="slt"></span> </label
               ><br />
             </div>
           </div>
@@ -106,19 +101,22 @@
 
         <div class="settings-popup" id="settingsForm">
           <div class="header-form-container">
-            <div class="settings-container"></div>
+            <div
+              class="settings-container"
+              onmouseleave="closeSettings()"
+            ></div>
           </div>
         </div>
       </div>
     </header>
     <div class="main-part">
       <div class="central-container">
-        <div class="window-timer">
+        <div class="window-timer" id="timer1">
           <div class="title">
             <input class="title-bar" type="text" placeholder="Your title" />
           </div>
           <div class="timer">
-            <input class="timer-bar" type="text" placeholder="00:00" />
+            <input class="timer-bar" type="time" />
           </div>
           <div class="description">
             <input
@@ -128,24 +126,36 @@
             />
           </div>
         </div>
-        <div class="window-timer">
-          <div
-            contenteditable="true"
-            data-placeholder="Your title"
-            class="title-div"
-          ></div>
-          <div
-            contenteditable="true"
-            data-placeholder="00:00"
-            class="timer-div"
-          ></div>
-          <div
-            contenteditable="true"
-            data-placeholder="Here you can leave a short hint"
-            class="description-div"
-          ></div>
+        <div class="window-timer" id="timer2">
+          <div class="title">
+            <input class="title-bar" type="text" placeholder="Your title" />
+          </div>
+          <div class="timer">
+            <input class="timer-bar" type="time" />
+          </div>
+          <div class="description">
+            <input
+              class="timer-description"
+              type="text"
+              placeholder="Here you can leave a short hint"
+            />
+          </div>
         </div>
-        <div class="window-timer"></div>
+        <div class="window-timer" id="timer3">
+          <div class="title">
+            <input class="title-bar" type="text" placeholder="Your title" />
+          </div>
+          <div class="timer">
+            <input class="timer-bar" type="time" />
+          </div>
+          <div class="description">
+            <input
+              class="timer-description"
+              type="text"
+              placeholder="Here you can leave a short hint"
+            />
+          </div>
+        </div>
         <div class="create-new">
           <input
             type="image"
@@ -155,6 +165,7 @@
             width="70"
             height="70"
             alt="add another timer window"
+            onclick="addTimer()"
           />
         </div>
       </div>

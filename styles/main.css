@@ -1,9 +1,19 @@
+:root {
+  --centralContrTopMarg: 100px;
+  --minBotMarg: 350px;
+  --minHightHeader: 200px;
+  --footerTopMarg: 0px;
+  --bold-color: rgb(154, 27, 2);
+  --lighter-color: rgb(239, 166, 141);
+  --background-color: rgb(216, 124, 91);
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: rgb(216, 124, 91);
   margin: 0;
   padding: 0;
-  height: 3000px;
+  opacity: 1;
 }
 
 .main-part {
@@ -194,11 +204,11 @@ body {
 }
 
 .central-container {
-  margin-top: 100px;
+  margin-top: var(--centralContrTopMarg);
   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  opacity: unset;
   column-gap: 50px;
   row-gap: 50px;
   justify-content: center;
@@ -260,44 +270,6 @@ body {
   border-radius: 10px;
   border-width: 1px;
   padding-left: 10px;
-}
-.title-div,
-.timer-div,
-.description-div {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 1px;
-  border-color: black;
-  padding-left: 10px;
-  text-align: left;
-  align-items: center;
-  height: 90%;
-  width: 80%;
-  background-color: white;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  display: flex;
-  box-sizing: border-box;
-}
-.title-div:empty:before,
-.timer-div:empty:before,
-.description-div:empty:before {
-  content: attr(data-placeholder);
-  color: rgb(90, 90, 90);
-  border-color: black;
-}
-.title-div {
-  height: 25.6px;
-}
-.timer-div {
-  height: 40px;
-}
-.description-div {
-  height: 70px;
+  position: relative;
+  outline: none;
 }
