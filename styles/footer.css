@@ -6,7 +6,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(154, 27, 2);
+  background-color: var(--bold-color);
   color: white;
   position: sticky;
   box-sizing: border-box;

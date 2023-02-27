@@ -30,34 +30,70 @@
         <div class="palette-popup" id="paletteForm">
           <div class="header-form-container">
             <div class="color-buttons-container" onmouseleave="closePalette()">
-              <button
-                type="color-choise"
-                class="btn"
-                id="blue"
-                onclick="switchToBlue()"
-                style="background-color: rgb(24, 102, 150)"
-              ></button>
-              <button
-                type="color-choise"
-                class="btn"
-                id="green"
-                onclick="switchToGreen()"
-                style="background-color: rgb(7, 114, 59)"
-              ></button>
-              <button
-                type="color-choise"
-                class="btn"
-                id="yellow"
-                onclick="switchToYellow()"
-                style="background-color: rgb(154, 154, 2)"
-              ></button>
-              <button
-                type="color-choise"
-                class="btn"
-                id="red"
-                onclick="switchToRed()"
-                style="background-color: rgb(154, 27, 2)"
-              ></button>
+              <label>
+                <button
+                  type="color-choise"
+                  class="btn"
+                  id="blue"
+                  onclick="switchToBlue()"
+                  style="background-color: rgb(24, 102, 150)"
+                ></button>
+                <input
+                  type="radio"
+                  name="colour"
+                  class="back-up"
+                  value="Blue"
+                  id="set-blue"
+                />
+              </label>
+              <label>
+                <button
+                  type="color-choise"
+                  class="btn"
+                  id="green"
+                  onclick="switchToGreen()"
+                  style="background-color: rgb(7, 114, 59)"
+                ></button>
+                <input
+                  type="radio"
+                  name="colour"
+                  class="back-up"
+                  value="Green"
+                  id="set-green"
+                />
+              </label>
+              <label
+                ><button
+                  type="color-choise"
+                  class="btn"
+                  id="yellow"
+                  onclick="switchToYellow()"
+                  style="background-color: rgb(154, 154, 2)"
+                ></button>
+                <input
+                  type="radio"
+                  name="colour"
+                  class="back-up"
+                  value="Yellow"
+                  id="set-yellow"
+                />
+              </label>
+              <label
+                ><button
+                  type="color-choise"
+                  class="btn"
+                  id="red"
+                  onclick="switchToRed()"
+                  style="background-color: rgb(154, 27, 2)"
+                ></button>
+                <input
+                  type="radio"
+                  name="colour"
+                  class="back-up"
+                  value="Red"
+                  id="set-red"
+                />
+              </label>
             </div>
           </div>
         </div>
@@ -82,7 +118,7 @@
               ><br />
               <label>Transparent background</label><br /><br />
               <label class="switch">
-                <input type="checkbox" id="transp" onclick="transpOn()" />
+                <input type="checkbox" id="transp" />
                 <span class="slider-round" id="slt"></span> </label
               ><br />
             </div>

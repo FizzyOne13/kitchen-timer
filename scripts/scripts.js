@@ -96,78 +96,69 @@ window.onload = function getCentrHeight() {
 
 //color schemes switching
 
-const colortheme = {
-  blue: {
-    "--bold-color": "rgb(7, 94, 114)",
-    "--lighter-color": "rgb(97, 245, 225)",
-    "--background-color": "rgb(99, 208, 212)",
-  },
-  green: {
-    "--bold-color": "rgb(7, 114, 59)",
-    "--lighter-color": "rgb(122, 206, 242)",
-    "--background-color": "rgb(99, 148, 212)",
-  },
-  yellow: {
-    "--bold-color": "rgb(154, 154, 2)",
-    "--lighter-color": "rgb(239, 232, 132)",
-    "--background-color": "rgb(204, 216, 91)",
-  },
-  red: {
-    "--bold-color": "rgb(154, 27, 2)",
-    "--lighter-color": "rgb(239, 166, 141)",
-    "--background-color": "rgb(216, 124, 91)",
-  },
-};
-
-const transptheme = {
-  trblue: {
-    "--bold-color": "rgb(7, 94, 114)",
-    "--lighter-color": "rgb(97, 245, 225)",
-    "--background-color": "rgba(99, 208, 212, 0.2)",
-  },
-  trgreen: {
-    "--bold-color": "rgb(7, 114, 59)",
-    "--lighter-color": "rgb(122, 206, 242)",
-    "--background-color": "rgba(99, 148, 212, 0.2)",
-  },
-  tryellow: {
-    "--bold-color": "rgb(154, 154, 2)",
-    "--lighter-color": "rgb(239, 232, 132)",
-    "--background-color": "rgba(204, 216, 91, 0.2)",
-  },
-  trred: {
-    "--bold-color": "rgb(154, 27, 2)",
-    "--lighter-color": "rgb(239, 166, 141)",
-    "--background-color": "rgba(216, 124, 91, 0.2)",
-  },
-};
+//
 
 function switchToBlue() {
-  document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
-  document.getElementById("head").style.backgroundColor = "rgb(122, 206, 242)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 148, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 94, 114)";
+  document.getElementById("set-blue").checked = true;
+  document.getElementById("set-green").checked = false;
+  document.getElementById("set-yellow").checked = false;
+  document.getElementById("set-red").checked = false;
+  scheme();
 }
-
 function switchToGreen() {
-  document.getElementById("logotype").style.color = "rgb(7, 114, 59)";
-  document.getElementById("head").style.backgroundColor = "rgb(97, 245, 225)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 208, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 114, 59)";
+  document.getElementById("set-blue").checked = false;
+  document.getElementById("set-green").checked = true;
+  document.getElementById("set-yellow").checked = false;
+  document.getElementById("set-red").checked = false;
+  scheme();
 }
-
 function switchToYellow() {
-  document.getElementById("logotype").style.color = "rgb(154, 154, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 232, 132)";
-  document.getElementById("body").style.backgroundColor = "rgb(204, 216, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 154, 2)";
+  document.getElementById("set-blue").checked = false;
+  document.getElementById("set-green").checked = false;
+  document.getElementById("set-yellow").checked = true;
+  document.getElementById("set-red").checked = false;
+  scheme();
+}
+function switchToRed() {
+  document.getElementById("set-blue").checked = false;
+  document.getElementById("set-green").checked = false;
+  document.getElementById("set-yellow").checked = false;
+  document.getElementById("set-red").checked = true;
+  scheme();
 }
 
-function switchToRed() {
-  document.getElementById("logotype").style.color = "rgb(154, 27, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
-  document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
+const switchTransp = document.querySelector("#transp");
+switchTransp.addEventListener("change", scheme, false);
+function scheme() {
+  if (switchTransp.checked) {
+    if (document.getElementById("set-blue").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgba(99, 148, 212, 0.2)";
+    } else if (document.getElementById("set-green").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgba(99, 208, 212, 0.2)";
+    } else if (document.getElementById("set-yellow").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgba(204, 216, 91, 0.2)";
+    } else if (document.getElementById("set-red").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgba(216, 124, 91, 0.2)";
+    }
+  } else {
+    if (document.getElementById("set-blue").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgb(99, 148, 212)";
+    } else if (document.getElementById("set-green").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgb(99, 208, 212)";
+    } else if (document.getElementById("set-yellow").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgb(204, 216, 91)";
+    } else if (document.getElementById("set-red").checked == true) {
+      let body = document.getElementById("body");
+      body.style.backgroundColor = "rgb(216, 124, 91)";
+    }
+  }
 }
 
 //timer adding and checking if placeholders are set to default because of using NodeCopy
@@ -188,32 +179,4 @@ function addTimer() {
   lastTimer
     .querySelector(".timer-description")
     .setAttribute("placeholder", "Here you can leave a short hint");
-}
-
-const tr = document.getElementById("transp");
-
-function transpOn() {
-  if (tr.checked) {
-    var currentColour = document.getElementById("body").style.backgroundColor;
-    if (currentColour == "rgb(99, 148, 212)") {
-      //blue
-      body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(99, 208, 212)") {
-      //green
-      body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(204, 216, 91)") {
-      //yellow
-      body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(216, 124, 91)") {
-      //red
-      body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
-      alert("it works!");
-    }
-  } else {
-    document.body.style.backgroundColor = "rgb(216, 124, 91)";
-    alert("it's cursed!");
-  }
 }

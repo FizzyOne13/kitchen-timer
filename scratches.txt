@@ -399,3 +399,201 @@ p {
   color: var(--light-grey, #f0f0f0, #f9f9f9) /* No --light-grey, so #f0f0f0 is 
   used as a fallback value */
 }
+
+function switchToBlue() {
+  document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
+  document.getElementById("head").style.backgroundColor = "rgb(122, 206, 242)";
+  document.getElementById("body").style.backgroundColor = "rgb(99, 148, 212)";
+  document.getElementById("foot").style.backgroundColor = "rgb(7, 94, 114)";
+}
+
+function switchToGreen() {
+  document.getElementById("logotype").style.color = "rgb(7, 114, 59)";
+  document.getElementById("head").style.backgroundColor = "rgb(97, 245, 225)";
+  document.getElementById("body").style.backgroundColor = "rgb(99, 208, 212)";
+  document.getElementById("foot").style.backgroundColor = "rgb(7, 114, 59)";
+}
+
+function switchToYellow() {
+  document.getElementById("logotype").style.color = "rgb(154, 154, 2)";
+  document.getElementById("head").style.backgroundColor = "rgb(239, 232, 132)";
+  document.getElementById("body").style.backgroundColor = "rgb(204, 216, 91)";
+  document.getElementById("foot").style.backgroundColor = "rgb(154, 154, 2)";
+}
+
+function switchToRed() {
+  document.getElementById("logotype").style.color = "rgb(154, 27, 2)";
+  document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
+  document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
+  document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
+}
+
+
+const colorTheme = {
+  blue: {
+    "--bold-color": "rgb(7, 94, 114)",
+    "--lighter-color": "rgb(97, 245, 225)",
+    "--background-color": "rgb(99, 208, 212)",
+  },
+  green: {
+    "--bold-color": "rgb(7, 114, 59)",
+    "--lighter-color": "rgb(122, 206, 242)",
+    "--background-color": "rgb(99, 148, 212)",
+  },
+  yellow: {
+    "--bold-color": "rgb(154, 154, 2)",
+    "--lighter-color": "rgb(239, 232, 132)",
+    "--background-color": "rgb(204, 216, 91)",
+  },
+  red: {
+    "--bold-color": "rgb(154, 27, 2)",
+    "--lighter-color": "rgb(239, 166, 141)",
+    "--background-color": "rgb(216, 124, 91)",
+  },
+};
+
+function useColor(colorChoice) {
+  document.documentElement.style.setProperty(
+    '--bold-color',
+    colorTheme\[colorChoice\]['--bold-color']
+  );
+  document.documentElement.style.setProperty(
+    '--lighter-color',
+    colorTheme\[colorChoice\]['--lighter-color']
+  );
+  document.documentElement.style.setProperty(
+    '--background-color',
+    colorTheme\[colorChoice\]['--background-color']
+  );
+}
+
+const toggle = doucment.querySelector("#transp");
+toggle.addEventListener("change", switchTransp, false);
+const transptheme = {
+  trblue: {
+    "--bold-color": "rgb(7, 94, 114)",
+    "--lighter-color": "rgb(97, 245, 225)",
+    "--background-color": "rgba(99, 208, 212, 0.2)",
+  },
+  trgreen: {
+    "--bold-color": "rgb(7, 114, 59)",
+    "--lighter-color": "rgb(122, 206, 242)",
+    "--background-color": "rgba(99, 148, 212, 0.2)",
+  },
+  tryellow: {
+    "--bold-color": "rgb(154, 154, 2)",
+    "--lighter-color": "rgb(239, 232, 132)",
+    "--background-color": "rgba(204, 216, 91, 0.2)",
+  },
+  trred: {
+    "--bold-color": "rgb(154, 27, 2)",
+    "--lighter-color": "rgb(239, 166, 141)",
+    "--background-color": "rgba(216, 124, 91, 0.2)",
+  },
+};
+
+
+
+
+
+//function switchTransp(e) {
+//if (e.target.checked) {
+//  useTransp('')
+// }
+//}
+
+
+const tr = document.getElementById("transp");
+
+function transpOn() {
+  if (tr.checked) {
+    var currentColour = document.getElementById("body").style.backgroundColor;
+    if (currentColour == "rgb(99, 148, 212)") {
+      //blue
+      body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(99, 208, 212)") {
+      //green
+      body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(204, 216, 91)") {
+      //yellow
+      body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
+      alert("it works!");
+    } else if (currentColour == "rgb(216, 124, 91)") {
+      //red
+      body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
+      alert("it works!");
+    }
+  } else {
+    document.body.style.backgroundColor = "rgb(216, 124, 91)";
+    alert("it's cursed!");
+  }
+}
+
+onclick="transpOn()"
+
+
+const switchTransp = document.querySelector("#transp");
+switchTransp.addEventListener("change", setTransp, false);
+function setTransp(e) {
+  if (e.target.checked) {
+    let body = document.getElementById("body");
+    body.style.backgroundColor = "rgba(216, 124, 91, 0.2)";
+  } else {
+    let body = document.getElementById("body");
+    body.style.backgroundColor = "rgb(216, 124, 91)";
+  }
+}
+
+const red = document.getElementById("red");
+function scheme() {}
+
+let currentColor = false;
+
+const validColors = ["Blue", "Green", "Yellow", "Red"];
+attr = {
+  name: "color",
+  onchange: (event) => {
+    currentColor = event.currentColor.value;
+  },
+  type: "radio",
+};
+for (attr.value of validColors) color - buttons - container.__make("label");
+
+const a = document.querySelector("#transp");
+a.addEventListener("change", setTransp, false);
+function setTransp() {
+  switchToBlue();
+  switchToGreen();
+  switchToYellow();
+  switchToRed();
+}
+
+function switchToBlue() {
+  document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
+  document.getElementById("head").style.backgroundColor = "rgb(122, 206, 242)";
+  document.getElementById("body").style.backgroundColor = "rgb(99, 148, 212)";
+  document.getElementById("foot").style.backgroundColor = "rgb(7, 94, 114)";
+}
+
+function switchToGreen() {
+  document.getElementById("logotype").style.color = "rgb(7, 114, 59)";
+  document.getElementById("head").style.backgroundColor = "rgb(97, 245, 225)";
+  document.getElementById("body").style.backgroundColor = "rgb(99, 208, 212)";
+  document.getElementById("foot").style.backgroundColor = "rgb(7, 114, 59)";
+}
+
+function switchToYellow() {
+  document.getElementById("logotype").style.color = "rgb(154, 154, 2)";
+  document.getElementById("head").style.backgroundColor = "rgb(239, 232, 132)";
+  document.getElementById("body").style.backgroundColor = "rgb(204, 216, 91)";
+  document.getElementById("foot").style.backgroundColor = "rgb(154, 154, 2)";
+}
+
+function switchToRed() {
+  document.getElementById("logotype").style.color = "rgb(154, 27, 2)";
+  document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
+  document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
+  document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
+}

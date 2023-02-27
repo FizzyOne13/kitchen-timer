@@ -10,7 +10,7 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: rgb(216, 124, 91);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
   opacity: 1;
