@@ -1,0 +1,16 @@
+{
+  "name": "kitchen-timer",
+  "version": "0.2.0",
+  "description": "kitchen-timer-training-website-for-petprojecting-purpose",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fizzy_One13",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.58.3"
+  }
+}

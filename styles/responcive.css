@@ -1,0 +1,28 @@
+@media screen and (max-width: 700px) {
+  #LRblock {
+    width: 120px;
+  }
+  .main-part > .central-container {
+    grid-template-columns: 1fr;
+  }
+  .central-container {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .login-block {
+    width: 140px;
+  }
+  .central-container {
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .central-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

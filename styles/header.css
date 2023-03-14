@@ -32,7 +32,7 @@
 .middle-section {
   resize: none;
   overflow-x: auto;
-  min-width: 100px;
+  min-width: 20px;
   position: relative;
   flex: 2;
   box-shadow: 1px 0px rgb(7, 94, 114);
@@ -133,9 +133,11 @@
   background-color: rgb(211, 211, 211);
   padding: 0px;
   min-width: 150px;
-  min-height: 40px;
+  min-height: 100px;
   text-align: center;
   vertical-align: middle;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .scheme-switch-container {

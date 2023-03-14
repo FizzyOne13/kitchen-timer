@@ -597,3 +597,40 @@ function switchToRed() {
   document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
   document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
 }
+
+
+radiobtn = document.getElementById("theid");
+radiobtn.checked = true;
+
+
+<button onclick="getElementValue()">Get Value of Input Field</button>
+
+function getElementValue() { var value = document.querySelector("select").value; }
+
+180 symbols
+
+function resetId() {
+  centrGrid.insertBefore(timerDiv, centrGrid.children[3]);
+  let r = document.getElementById("timer4");
+  centrGrid.removeChild(r);
+}
+
+button type='submit'
+
+
+ стилі за замовчуванням, "занулення" 
+
+
+ 
+/*function resetId() {
+  centrGrid.insertBefore(timerDiv, centrGrid.children[3]);
+  let r = document.getElementById("timer4");
+  centrGrid.removeChild(r);
+}*/
+
+The tag name passed is lower-cased internally before searching for elements. So, for svg elements, use getElementsByTagNameNS().
+
+npm list -g
+style.id = "close" + (i + 1);
+
+

@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RecipeTime - functional cooking assistant</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -9,6 +10,8 @@
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/responcive.css" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
   </head>
   <style></style>
   <body id="body">
@@ -137,62 +140,160 @@
 
         <div class="settings-popup" id="settingsForm">
           <div class="header-form-container">
-            <div
-              class="settings-container"
-              onmouseleave="closeSettings()"
-            ></div>
+            <div class="settings-container" onmouseleave="closeSettings()">
+              <label>Two-timer wide layot</label><br /><br />
+              <label class="switch">
+                <input type="checkbox" id="3to2" />
+                <span class="slider-round" onclick="twoC()"></span> </label
+              ><br />
+            </div>
           </div>
         </div>
       </div>
     </header>
+
     <div class="main-part">
       <div class="central-container">
-        <div class="window-timer" id="timer1">
+        <div class="window-timer" id="">
+          <input
+            type="image"
+            class="close-timer"
+            src="icons/cross-green.png"
+            name="green-cross-login"
+            width="14"
+            height="14"
+            alt="close"
+            onclick="delTimer(this)"
+            id=""
+          />
           <div class="title">
-            <input class="title-bar" type="text" placeholder="Your title" />
-          </div>
-          <div class="timer">
-            <input class="timer-bar" type="time" />
-          </div>
-          <div class="description">
             <input
-              class="timer-description"
+              class="title-bar"
               type="text"
-              placeholder="Here you can leave a short hint"
+              placeholder="Your title"
+              maxlength="40"
             />
           </div>
-        </div>
-        <div class="window-timer" id="timer2">
-          <div class="title">
-            <input class="title-bar" type="text" placeholder="Your title" />
-          </div>
           <div class="timer">
-            <input class="timer-bar" type="time" />
+            <input
+              class="timer-bar"
+              type="time"
+              value=""
+              onchange="setTime()"
+              step="1"
+              id="time1"
+            />
+            <input class="timer-set" type="button" value="Set" />
+            <input class="timer-stop" type="button" value="Stop" />
           </div>
           <div class="description">
-            <input
+            <textarea
               class="timer-description"
-              type="text"
+              rows="4"
               placeholder="Here you can leave a short hint"
-            />
+              style="width: 222.4px; height: 64px; resize: none"
+              maxlength="180"
+              id=""
+              oninput="letsGo()"
+            ></textarea>
+            <div class="timer-description-chars-left">
+              180 characters remaining
+            </div>
           </div>
         </div>
-        <div class="window-timer" id="timer3">
+        <div class="window-timer" id="">
+          <input
+            type="image"
+            class="close-timer"
+            src="icons/cross-green.png"
+            name="green-cross-login"
+            width="14"
+            height="14"
+            alt="close"
+            onclick="delTimer(this)"
+            id=""
+          />
           <div class="title">
-            <input class="title-bar" type="text" placeholder="Your title" />
+            <input
+              class="title-bar"
+              type="text"
+              placeholder="Your title"
+              maxlength="40"
+            />
           </div>
           <div class="timer">
-            <input class="timer-bar" type="time" />
+            <input
+              class="timer-bar"
+              type="time"
+              value=""
+              onchange="setTime(this.value)"
+              step="1"
+            />
+            <input class="timer-set" type="button" value="Set" />
+            <input class="timer-stop" type="button" value="Stop" />
           </div>
           <div class="description">
-            <input
+            <textarea
               class="timer-description"
-              type="text"
+              rows="4"
               placeholder="Here you can leave a short hint"
-            />
+              style="width: 222.4px; height: 64px; resize: none"
+              maxlength="180"
+              id=""
+              oninput="letsGo()"
+            ></textarea>
+            <div class="timer-description-chars-left">
+              180 characters remaining
+            </div>
           </div>
         </div>
-        <div class="create-new">
+        <div class="window-timer" id="">
+          <input
+            type="image"
+            class="close-timer"
+            src="icons/cross-green.png"
+            name="green-cross-login"
+            width="14"
+            height="14"
+            alt="close"
+            onclick="delTimer(this)"
+            id=""
+          />
+          <div class="title">
+            <input
+              class="title-bar"
+              type="text"
+              placeholder="Your title"
+              maxlength="40"
+            />
+          </div>
+          <div class="timer">
+            <input
+              class="timer-bar"
+              type="time"
+              value=""
+              onchange="setTime(this.value)"
+              step="1"
+            />
+            <input class="timer-set" type="button" value="Set" />
+            <input class="timer-stop" type="button" value="Stop" />
+          </div>
+          <div class="description">
+            <textarea
+              class="timer-description"
+              rows="4"
+              placeholder="Here you can leave a short hint"
+              style="width: 222.4px; height: 64px; resize: none"
+              maxlength="180"
+              id=""
+              oninput="letsGo()"
+            ></textarea>
+            <div class="timer-description-chars-left">
+              180 characters remaining
+            </div>
+          </div>
+        </div>
+        <div class="create-new" id="">
           <input
             type="image"
             class="add-button"
@@ -224,7 +325,7 @@
           width="14"
           height="14"
           alt="close"
-          onclick="closeLRblock()"
+          onclick=""
           id="LRclose"
         />
 
@@ -315,7 +416,7 @@
                 height="14"
                 alt="close"
                 onclick="closeRblock()"
-                id="Lclose"
+                id="Rclose"
               />
             </form>
           </div>
