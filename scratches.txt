@@ -42,32 +42,6 @@ button {
   background-color: rgb(117, 116, 116);
 
 
-COLOR-CODES FOR THEMES
-
-blue
-logo + bold objects - rgb(7, 94, 114)
-2nd lighter - rgb(97, 245, 225)
-background - rgb(99, 208, 212)
-
-green
-logo + bold objects - rgb(7, 114, 59) 
-2nd lighter - rgb(122, 206, 242)
-background - rgb(99, 148, 212)
-
-yellow
-logo + bold objects - rgb(154, 154, 2) 
-2nd lighter - rgb(239, 232, 132)
-background - rgb(204, 216, 91)
-
-red
-logo + bold objects - rgb(154, 27, 2) 
-2nd lighter - rgb(239, 166, 141)
-background - rgb(216, 124, 91)
-
-header settings popups background color
-rgb(217, 238, 255)
-
-
 ?Який функціонал я ще хочу та маю відобразити в налаштуваннях?
 
 Підтягнути муз мелодію та налаштування на неї, бажано, щоб кожне віконце мало власне, якщо ігнорується перша мелодія,
@@ -75,21 +49,7 @@ rgb(217, 238, 255)
 Показувати сповіщення у вигляді модальних вікон у браузері?
 
 налаштування тільки для зареєстрованних користувачів або якщо є кукі - подумати, як це взагалі робиться, чи робити і скільки
-там бекенду. взагалі, в дальніх планах зробити бекенд на це все.
-
-
-calc(var(
-
-  var footerPlace = document.querySelector("body").style.height;
-var footerHeight = document.getElementById("foot").style.minHeight;
-document.getElementById("foot").style.marginTop =
-  "calc(footerPlace - footerHeight)";
-
-  A race condition, make sure that whatever object is being accessed through the .style property access is encased in a leading if statement - like
-
-if(document.getElementByClassname(“myClassName”).length > 0){     
-    document.getElementByClassname(“myClassName”)[0].style = "yourCss = somepx;" 
-} 
+там бекенду. взагалі, в дальніх планах зробити бекенд на це все. 
 
 
 поставити, мабуть, плавне перемикання світла - як опцію у налаштуваннях
@@ -151,26 +111,6 @@ for footer links:
 }
 add later
 
-main > tooltip - empty class?
-
-grid-template-rows: 1fr 1fr;
-
-
-working fucntion code {
-   const timerDiv = document.createElement("div");
-  centrGrid.append(timerDiv);
-}
-
-
-this worked even better, but not in a row
-const centrGrid = document.querySelector(".central-container");
-const getTimer = document.querySelector(".window-timer");
-function addTimer() {
-  const timerDiv = getTimer.cloneNode(true);
-  centrGrid.append(timerDiv);
-}
-
-
 було два типи таймерів і другий мені сдається менш перспективним, хоча і написан через атрибути attr(), які мені цікаві зараз
 копіюю внутрощи контейнера-таймера в html файлі
  <div
@@ -231,20 +171,6 @@ function addTimer() {
   height: 70px;
 }
 
-
-centrGrid.append(timerDiv); - that if i need to put node as last one in greed
-
-
- const title = document.centrGrid.children[n - 1].querySelector(".title-bar");
-  title.setAttribute("placeholder", "Your title");
-
-
-   const title = getTimer[0].querySelector(".title-bar");
-  document.title.innerText = "FFF";
-
-    document.getElementById;
-  const title = getTimer[0].querySelector(".title-bar");
-  document.title.innerText = "FFF";
 
   <div class="demo">Hello</div>
 // Adding a CSS class name to an element
@@ -317,58 +243,10 @@ if (input) {
 </div>
 <span> Todo list : </span>
 
-
-
-let colorDef = document.getElementById("palette-call");
-colorDef.addEventListener("click", function defColorCheck() {
-  if (document.getElementById(blue).style.backgroundColor != "blue") {
-    document.getElementById(blue).style.backgroundColor == "blue";
-  }
-});
-
-const currentColour = document.getElementById("body").style.backgroundColor;
-
-
-const currentColour = body.getAttribute("background-color");
-
-
-
-
-const tr = document.getElementById("transp");
-const body = document.getElementById("body");
-const currentColour = document.getElementById("body").style.backgroundColor;
-function transpOn() {
-  if (tr.checked && currentColour == "rgb(99, 148, 212)") {
-    //blue
-    body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
-    alert("it works!");
-  } else if (tr.checked && currentColour == "rgb(99, 208, 212)") {
-    //green
-    body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
-    alert("it works!");
-  } else if (tr.checked && currentColour == "rgb(204, 216, 91)") {
-    //yellow
-    body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
-    alert("it works!");
-  } else if (tr.checked && currentColour == "rgb(216, 124, 91)") {
-    //red
-    body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
-    alert("it works!");
-  } else {
-    document.body.style.backgroundColor = "rgb(216, 124, 91)";
-  }
-}
-
-
-height: 3000px;  body
-
 //var footerPlace = document.getPropertyValue("--footerPlacing");
 //var footerHeight = document.getElementById("foot").style.minHeight;
 //document.getElementById("foot").style.marginTop =
 //"calc(footerPlace - footerHeight)";
-
-
- margin-top: 3000px; footer
 
 
  <style>
@@ -400,237 +278,96 @@ p {
   used as a fallback value */
 }
 
-function switchToBlue() {
-  document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
-  document.getElementById("head").style.backgroundColor = "rgb(122, 206, 242)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 148, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 94, 114)";
-}
 
-function switchToGreen() {
-  document.getElementById("logotype").style.color = "rgb(7, 114, 59)";
-  document.getElementById("head").style.backgroundColor = "rgb(97, 245, 225)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 208, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 114, 59)";
-}
+COLOR-CODES FOR THEMES
 
-function switchToYellow() {
-  document.getElementById("logotype").style.color = "rgb(154, 154, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 232, 132)";
-  document.getElementById("body").style.backgroundColor = "rgb(204, 216, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 154, 2)";
-}
+blue 
+logo + bold objects - rgb(7, 94, 114)   "--bold-color"
+2nd lighter - rgb(97, 245, 225)   "--lighter-color"
+background - rgb(99, 208, 212)    "--background-color"
 
-function switchToRed() {
-  document.getElementById("logotype").style.color = "rgb(154, 27, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
-  document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
-}
+green
+logo + bold objects - rgb(7, 114, 59) 
+2nd lighter - rgb(122, 206, 242)
+background - rgb(99, 148, 212)
 
+yellow
+logo + bold objects - rgb(154, 154, 2) 
+2nd lighter - rgb(239, 232, 132)
+background - rgb(204, 216, 91)
 
-const colorTheme = {
-  blue: {
-    "--bold-color": "rgb(7, 94, 114)",
-    "--lighter-color": "rgb(97, 245, 225)",
-    "--background-color": "rgb(99, 208, 212)",
-  },
-  green: {
-    "--bold-color": "rgb(7, 114, 59)",
-    "--lighter-color": "rgb(122, 206, 242)",
-    "--background-color": "rgb(99, 148, 212)",
-  },
-  yellow: {
-    "--bold-color": "rgb(154, 154, 2)",
-    "--lighter-color": "rgb(239, 232, 132)",
-    "--background-color": "rgb(204, 216, 91)",
-  },
-  red: {
-    "--bold-color": "rgb(154, 27, 2)",
-    "--lighter-color": "rgb(239, 166, 141)",
-    "--background-color": "rgb(216, 124, 91)",
-  },
-};
+red
+logo + bold objects - rgb(154, 27, 2) 
+2nd lighter - rgb(239, 166, 141)
+background - rgb(216, 124, 91)
 
-function useColor(colorChoice) {
-  document.documentElement.style.setProperty(
-    '--bold-color',
-    colorTheme\[colorChoice\]['--bold-color']
-  );
-  document.documentElement.style.setProperty(
-    '--lighter-color',
-    colorTheme\[colorChoice\]['--lighter-color']
-  );
-  document.documentElement.style.setProperty(
-    '--background-color',
-    colorTheme\[colorChoice\]['--background-color']
-  );
-}
-
-const toggle = doucment.querySelector("#transp");
-toggle.addEventListener("change", switchTransp, false);
-const transptheme = {
-  trblue: {
-    "--bold-color": "rgb(7, 94, 114)",
-    "--lighter-color": "rgb(97, 245, 225)",
-    "--background-color": "rgba(99, 208, 212, 0.2)",
-  },
-  trgreen: {
-    "--bold-color": "rgb(7, 114, 59)",
-    "--lighter-color": "rgb(122, 206, 242)",
-    "--background-color": "rgba(99, 148, 212, 0.2)",
-  },
-  tryellow: {
-    "--bold-color": "rgb(154, 154, 2)",
-    "--lighter-color": "rgb(239, 232, 132)",
-    "--background-color": "rgba(204, 216, 91, 0.2)",
-  },
-  trred: {
-    "--bold-color": "rgb(154, 27, 2)",
-    "--lighter-color": "rgb(239, 166, 141)",
-    "--background-color": "rgba(216, 124, 91, 0.2)",
-  },
-};
-
-
-
-
-
-//function switchTransp(e) {
-//if (e.target.checked) {
-//  useTransp('')
-// }
-//}
-
-
-const tr = document.getElementById("transp");
-
-function transpOn() {
-  if (tr.checked) {
-    var currentColour = document.getElementById("body").style.backgroundColor;
-    if (currentColour == "rgb(99, 148, 212)") {
-      //blue
-      body.setAttribute("background-color", "rgba(99, 148, 212, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(99, 208, 212)") {
-      //green
-      body.setAttribute("background-color", "rgba(99, 208, 212, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(204, 216, 91)") {
-      //yellow
-      body.setAttribute("background-color", "rgba(204, 216, 91, 0.2)");
-      alert("it works!");
-    } else if (currentColour == "rgb(216, 124, 91)") {
-      //red
-      body.setAttribute("background-color", "rgba(216, 124, 91, 0.2)");
-      alert("it works!");
-    }
-  } else {
-    document.body.style.backgroundColor = "rgb(216, 124, 91)";
-    alert("it's cursed!");
-  }
-}
-
-onclick="transpOn()"
-
-
-const switchTransp = document.querySelector("#transp");
-switchTransp.addEventListener("change", setTransp, false);
-function setTransp(e) {
-  if (e.target.checked) {
-    let body = document.getElementById("body");
-    body.style.backgroundColor = "rgba(216, 124, 91, 0.2)";
-  } else {
-    let body = document.getElementById("body");
-    body.style.backgroundColor = "rgb(216, 124, 91)";
-  }
-}
-
-const red = document.getElementById("red");
-function scheme() {}
-
-let currentColor = false;
-
-const validColors = ["Blue", "Green", "Yellow", "Red"];
-attr = {
-  name: "color",
-  onchange: (event) => {
-    currentColor = event.currentColor.value;
-  },
-  type: "radio",
-};
-for (attr.value of validColors) color - buttons - container.__make("label");
-
-const a = document.querySelector("#transp");
-a.addEventListener("change", setTransp, false);
-function setTransp() {
-  switchToBlue();
-  switchToGreen();
-  switchToYellow();
-  switchToRed();
-}
-
-function switchToBlue() {
-  document.getElementById("logotype").style.color = "rgb(7, 94, 114)";
-  document.getElementById("head").style.backgroundColor = "rgb(122, 206, 242)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 148, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 94, 114)";
-}
-
-function switchToGreen() {
-  document.getElementById("logotype").style.color = "rgb(7, 114, 59)";
-  document.getElementById("head").style.backgroundColor = "rgb(97, 245, 225)";
-  document.getElementById("body").style.backgroundColor = "rgb(99, 208, 212)";
-  document.getElementById("foot").style.backgroundColor = "rgb(7, 114, 59)";
-}
-
-function switchToYellow() {
-  document.getElementById("logotype").style.color = "rgb(154, 154, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 232, 132)";
-  document.getElementById("body").style.backgroundColor = "rgb(204, 216, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 154, 2)";
-}
-
-function switchToRed() {
-  document.getElementById("logotype").style.color = "rgb(154, 27, 2)";
-  document.getElementById("head").style.backgroundColor = "rgb(239, 166, 141)";
-  document.getElementById("body").style.backgroundColor = "rgb(216, 124, 91)";
-  document.getElementById("foot").style.backgroundColor = "rgb(154, 27, 2)";
-}
-
-
-radiobtn = document.getElementById("theid");
-radiobtn.checked = true;
+header settings popups background color
+rgb(217, 238, 255)
 
 
 <button onclick="getElementValue()">Get Value of Input Field</button>
 
 function getElementValue() { var value = document.querySelector("select").value; }
 
-180 symbols
-
-function resetId() {
-  centrGrid.insertBefore(timerDiv, centrGrid.children[3]);
-  let r = document.getElementById("timer4");
-  centrGrid.removeChild(r);
-}
-
-button type='submit'
-
-
  стилі за замовчуванням, "занулення" 
 
 
- 
-/*function resetId() {
-  centrGrid.insertBefore(timerDiv, centrGrid.children[3]);
-  let r = document.getElementById("timer4");
-  centrGrid.removeChild(r);
-}*/
-
 The tag name passed is lower-cased internally before searching for elements. So, for svg elements, use getElementsByTagNameNS().
 
-npm list -g
-style.id = "close" + (i + 1);
+
+input[type="file"]::file-selector-button,
+input[type="submit"] {
+  border-width: 2px;
+  border-color: black;
+  border-radius: 6px;
+  padding: 0.3em;
+  transition: 0.2s;
+  background: rgb(233, 233, 233);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+input[type="file"]::file-selector-button:hover,
+input[type="submit"]:hover {
+  background: var(--bold-color);
+  cursor: pointer;
+  color: white;
+  border-color: var(--bold-color);
+}
+
+<label for="background-upload"></label>
+ <label for="alarmsound-upload"></label>
+
+ .file-upload::-webkit-file-upload-button {
+ visibility: hidden;
+}
+
+.file-upload::before {
+  content: 'Select file'
+  border-width: 2px;
+  border-color: black;
+  border-radius: 6px;
+  padding: 0.3em;
+  transition: 0.2s;
+  background: rgb(233, 233, 233);
+  margin-right: 5px;
+  margin-left: 5px;
+
+  -webkit-user-select: none;
+  white-space: nowrap;
+  content: 'Select some files';
+  display: inline-block;
+  outline: none;
+}
+
+.file-upload:hover::before {
+  background: var(--bold-color);
+  cursor: pointer;
+  color: white;
+  border-color: var(--bold-color);
+}
 
 
+  // const timerArray = Array.from(timers);
+  // console.log(timers);
+  // console.log(timerArray);

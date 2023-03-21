@@ -117,12 +117,16 @@
               <label>Pattern background</label><br /><br />
               <label class="switch">
                 <input type="checkbox" id="patt" />
-                <span class="slider-round"></span> </label
+                <span class="slider-round" onclick="setPat()"></span> </label
               ><br />
               <label>Transparent background</label><br /><br />
               <label class="switch">
                 <input type="checkbox" id="transp" />
-                <span class="slider-round" id="slt"></span> </label
+                <span
+                  class="slider-round"
+                  id="slt"
+                  onclick="scheme()"
+                ></span> </label
               ><br />
             </div>
           </div>
@@ -141,11 +145,22 @@
         <div class="settings-popup" id="settingsForm">
           <div class="header-form-container">
             <div class="settings-container" onmouseleave="closeSettings()">
+              <br />
               <label>Two-timer wide layot</label><br /><br />
               <label class="switch">
                 <input type="checkbox" id="3to2" />
                 <span class="slider-round" onclick="twoC()"></span> </label
               ><br />
+              <input
+                type="file"
+                id="background-upload"
+                accept=".svg, .png"
+              /><br />
+              <br />
+              <input type="file" id="alarmsound-upload" accept=".mp3" /><br />
+              <br />
+              <input type="submit" />
+              <br /><br />
             </div>
           </div>
         </div>
@@ -153,7 +168,7 @@
     </header>
 
     <div class="main-part">
-      <div class="central-container">
+      <div class="central-container" onchange="letsGo()">
         <div class="window-timer" id="">
           <input
             type="image"
@@ -325,7 +340,7 @@
           width="14"
           height="14"
           alt="close"
-          onclick=""
+          onclick="closeLRblock()"
           id="LRclose"
         />
 

@@ -6,6 +6,7 @@
     grid-template-columns: 1fr;
   }
   .central-container {
+    -moz-column-gap: 30px;
     column-gap: 30px;
     row-gap: 30px;
   }
@@ -16,6 +17,7 @@
     width: 140px;
   }
   .central-container {
+    -moz-column-gap: 30px;
     column-gap: 30px;
     row-gap: 30px;
   }
