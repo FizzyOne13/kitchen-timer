@@ -250,9 +250,92 @@ function setPat() {
     document.body.style.backgroundImage = "";
     document.body.style.backgroundRepeat = "";
     document.body.style.backgroundSize = "";
+    store.style.setProperty("--beforeTransparency", "rgba(0, 0, 0, 0)");
   } else {
     document.body.style.backgroundImage = "url(/images/pattern.png)";
     document.body.style.backgroundRepeat = "repeat";
     document.body.style.backgroundSize = "contain";
+    store.style.setProperty("--beforeTransparency", "rgba(0, 0, 0, 0.05)");
   }
 }
+
+//timer part
+
+const timer1 = document.getElementById("timer1");
+const form1 = document.getElementById("timer-form1");
+const timePick1 = document.getElementById("time1");
+
+const countdownEl1 = document.getElementById("counting-timer1");
+const countdownStop1 = document.getElementById("timer-stop1");
+const timeElements1 = countdownEl1.querySelectorAll("span");
+
+const milisec = "";
+//let countdownDate = "";
+//let countdownValue = "";
+let countdownActivate;
+const second = 1000;
+const minute = second * 60;
+const hour = minute * 60;
+
+/*const now = new Date();
+console.log(now);
+const today = new Date().toISOString().split("T")[1].split(".")[0];
+console.log(today);*/
+
+//off for now
+function updateDom() {
+  /* const now = new Date().getTime();
+  const difference = milisec - now;
+  console.log(milisec);
+  console.log(now);
+  console.log("difference:", difference);
+  const hours = Math.floor(difference / hour);
+  const minutes = Math.floor((difference % hour) / minute);
+  const seconds = Math.floor((difference % minute) / second);
+  console.log(hours, minutes, seconds); */
+  countdownActivate = setInterval(() => {}, 1000);
+}
+
+function updateCountdown(e) {
+  e.preventDefault();
+  countdownDate = e.srcElement[0].value;
+  console.log(countdownDate);
+  const now = new Date();
+  console.log(now);
+  let t = countdownDate.split(":");
+  const time = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    t[0],
+    t[1],
+    t[2]
+  );
+  console.log(time);
+  const milisec = time.getTime();
+  console.log(milisec);
+  const dir = milisec - now;
+  console.log(dir);
+  const hours = Math.floor(dir / hour);
+  const minutes = Math.floor((dir % hour) / minute);
+  const seconds = Math.floor((dir % minute) / second);
+  console.log(hours, minutes, seconds);
+  timeElements1[0].textContent = ` ${hours} `;
+  timeElements1[1].textContent = ` ${minutes} `;
+  timeElements1[2].textContent = ` ${seconds} `;
+
+  form1.hidden = true;
+  countdownEl1.hidden = false;
+  //updateDom();
+}
+
+function reset() {
+  form1.hidden = false;
+  countdownEl1.hidden = true;
+  clearInterval(countdownActivate);
+  countdownDate = "";
+}
+
+//Listeners for countdown block
+form1.addEventListener("submit", updateCountdown);
+countdownStop1.addEventListener("click", reset);

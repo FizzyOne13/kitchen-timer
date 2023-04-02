@@ -51,7 +51,8 @@ button {
 налаштування тільки для зареєстрованних користувачів або якщо є кукі - подумати, як це взагалі робиться, чи робити і скільки
 там бекенду. взагалі, в дальніх планах зробити бекенд на це все. 
 
-
+додати можливість вмикнути анімацію візерункового бекграунда, лінійні з вибіром напрямку, або якийсь пресет, наприклад
+по налаштуванню - бекграунд відос
 поставити, мабуть, плавне перемикання світла - як опцію у налаштуваннях
 
 const button = document.getElementById('btn');
@@ -368,6 +369,125 @@ input[type="submit"]:hover {
 }
 
 
+I don't know if there's a central reference, but these are the methods and properties I know of that return HTMLCollections and live NodeLists:
+
+Methods
+parentNode.getElementsByClassName() - returns an HTMLCollection
+parentNode.getElementsByTagName()   - returns an HTMLCollection
+parentNode.getElementsByTagNameNS() - returns an HTMLCollection
+  document.getElementsByName()      - returns a NodeList
+Properties
+parentNode.children   - returns an HTMLCollection
+      Node.childNodes - returns a NodeList
+
+
   // const timerArray = Array.from(timers);
   // console.log(timers);
   // console.log(timerArray);
+
+You can use the following code:
+
+(myvar instanceof Date) // returns true or false
+
+  <input
+              class="timer-bar"
+              type="time"
+              value=""
+              onchange=""
+              step="1"
+            />
+
+ const today = new Date().toISOString().split("T")[0];
+
+   countdownValue = new Date(countdownDate).getTime();
+  console.log(countdownValue);
+
+//const validateTime = today(hours, minutes, seconds);
+//const milisec = validateTime.getTime();
+//console.log(milisec);
+
+
+
+
+quick-save
+
+//timer part
+
+const timer1 = document.getElementById("timer1");
+const form1 = document.getElementById("timer-form1");
+const timePick1 = document.getElementById("time1");
+
+const countdownEl1 = document.getElementById("counting-timer1");
+const countdownStop1 = document.getElementById("timer-stop1");
+const timeElements1 = countdownEl1.querySelectorAll("span");
+
+const milisec = "";
+//let countdownDate = "";
+//let countdownValue = "";
+let countdownActivate;
+const second = 1000;
+const minute = second * 60;
+const hour = minute * 60;
+
+/*const now = new Date();
+console.log(now);
+const today = new Date().toISOString().split("T")[1].split(".")[0];
+console.log(today);*/
+
+//off for now
+function updateDom() {
+  /* const now = new Date().getTime();
+  const difference = milisec - now;
+  console.log(milisec);
+  console.log(now);
+  console.log("difference:", difference);
+  const hours = Math.floor(difference / hour);
+  const minutes = Math.floor((difference % hour) / minute);
+  const seconds = Math.floor((difference % minute) / second);
+  console.log(hours, minutes, seconds); */
+  countdownActivate = setInterval(() => {}, 1000);
+}
+
+function updateCountdown(e) {
+  e.preventDefault();
+  countdownDate = e.srcElement[0].value;
+  console.log(countdownDate);
+  const now = new Date();
+  console.log(now);
+  let t = countdownDate.split(":");
+  const time = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    t[0],
+    t[1],
+    t[2]
+  );
+  console.log(time);
+  const milisec = time.getTime();
+  console.log(milisec);
+  const dir = milisec - now;
+  console.log(dir);
+  const hours = Math.floor(dir / hour);
+  const minutes = Math.floor((dir % hour) / minute);
+  const seconds = Math.floor((dir % minute) / second);
+  console.log(hours, minutes, seconds);
+  timeElements1[0].textContent = ` ${hours} `;
+  timeElements1[1].textContent = ` ${minutes} `;
+  timeElements1[2].textContent = ` ${seconds} `;
+
+  form1.hidden = true;
+  countdownEl1.hidden = false;
+  //updateDom();
+}
+
+function reset() {
+  form1.hidden = false;
+  countdownEl1.hidden = true;
+  clearInterval(countdownActivate);
+  countdownDate = "";
+}
+
+//Listeners for countdown block
+form1.addEventListener("submit", updateCountdown);
+countdownStop1.addEventListener("click", reset);

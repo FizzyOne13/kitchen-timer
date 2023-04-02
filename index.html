@@ -21,6 +21,7 @@
       </div>
       <div class="middle-section"></div>
       <div class="right-section">
+        <!--Color choice icon and it's popup -->
         <input
           type="image"
           class="right-sec-icons"
@@ -100,7 +101,7 @@
             </div>
           </div>
         </div>
-
+        <!--Pattern and transparency enabling icon and popup -->
         <input
           type="image"
           class="right-sec-icons"
@@ -141,7 +142,7 @@
           id="settings-call"
           onclick="openSettings()"
         />
-
+        <!-- Settings window and it's popup-->
         <div class="settings-popup" id="settingsForm">
           <div class="header-form-container">
             <div class="settings-container" onmouseleave="closeSettings()">
@@ -169,6 +170,80 @@
 
     <div class="main-part">
       <div class="central-container" onchange="letsGo()">
+        <!--First - the main timer of central container, serving as copy for new added -->
+        <div class="window-timer" id="">
+          <input
+            type="image"
+            class="close-timer"
+            src="icons/cross-green.png"
+            name="green-cross-login"
+            width="14"
+            height="14"
+            alt="close"
+            onclick="delTimer(this)"
+            id=""
+          />
+          <div class="title">
+            <input
+              class="title-bar"
+              type="text"
+              placeholder="Your title"
+              maxlength="40"
+            />
+          </div>
+
+          <div class="timer" id="timer1">
+            <!--Input phase - select -->
+            <form class="timer-form" id="timer-form1">
+              <label for="time1"></label>
+              <input
+                class="timer-bar"
+                type="time"
+                onchange=""
+                step="1"
+                id="time1"
+              />
+              <button class="timer-set" type="submit">Set</button>
+            </form>
+            <!--Countdown phase - processing -->
+            <div class="counting-timer" id="counting-timer1" hidden>
+              <div class="counting-container">
+                <ul>
+                  <li><span></span>Hours</li>
+                  <li><span></span>Minutes</li>
+                  <li><span></span>Seconds</li>
+                </ul>
+                <input
+                  class="timer-stop"
+                  type="button"
+                  id="timer-stop1"
+                  value="Stop"
+                />
+              </div>
+            </div>
+            <!--Complete phase - timer done -->
+            <div class="completed-timer" hidden>
+              <p class="completed-title">Time out</p>
+              <p id="">Coundown done on 22-03-2022</p>
+              <input class="timer-stop" type="button" value="New timer" />
+            </div>
+          </div>
+
+          <div class="description">
+            <textarea
+              class="timer-description"
+              rows="4"
+              placeholder="Here you can leave a short hint"
+              style="width: 222.4px; height: 64px; resize: none"
+              maxlength="180"
+              id=""
+              oninput="letsGo()"
+            ></textarea>
+            <div class="timer-description-chars-left">
+              180 characters remaining
+            </div>
+          </div>
+        </div>
         <div class="window-timer" id="">
           <input
             type="image"
@@ -190,14 +265,7 @@
             />
           </div>
           <div class="timer">
-            <input
-              class="timer-bar"
-              type="time"
-              value=""
-              onchange="setTime()"
-              step="1"
-              id="time1"
-            />
+            <input class="timer-bar" type="date" />
             <input class="timer-set" type="button" value="Set" />
             <input class="timer-stop" type="button" value="Stop" />
           </div>
@@ -241,53 +309,7 @@
               class="timer-bar"
               type="time"
               value=""
-              onchange="setTime(this.value)"
-              step="1"
-            />
-            <input class="timer-set" type="button" value="Set" />
-            <input class="timer-stop" type="button" value="Stop" />
-          </div>
-          <div class="description">
-            <textarea
-              class="timer-description"
-              rows="4"
-              placeholder="Here you can leave a short hint"
-              style="width: 222.4px; height: 64px; resize: none"
-              maxlength="180"
-              id=""
-              oninput="letsGo()"
-            ></textarea>
-            <div class="timer-description-chars-left">
-              180 characters remaining
-            </div>
-          </div>
-        </div>
-        <div class="window-timer" id="">
-          <input
-            type="image"
-            class="close-timer"
-            src="icons/cross-green.png"
-            name="green-cross-login"
-            width="14"
-            height="14"
-            alt="close"
-            onclick="delTimer(this)"
-            id=""
-          />
-          <div class="title">
-            <input
-              class="title-bar"
-              type="text"
-              placeholder="Your title"
-              maxlength="40"
-            />
-          </div>
-          <div class="timer">
-            <input
-              class="timer-bar"
-              type="time"
-              value=""
-              onchange="setTime(this.value)"
+              onchange=""
               step="1"
             />
             <input class="timer-set" type="button" value="Set" />
